@@ -4,7 +4,7 @@
     QUERY_TEMPLATE_VAR,
     getRagViewContext
   } from '$lib/stores/ragViewStore';
-  import type {RagRetrievalResultItem} from '$lilac';
+  import type {RagRetrievalResultItem} from '$osmanthus';
   import {
     ComposedModal,
     ModalBody,

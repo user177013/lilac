@@ -1,4 +1,4 @@
-import {RagService} from '$lilac';
+import {RagService} from '$osmanthus';
 import {createApiQuery} from './queryUtils';
 
 export const RAG_TAG = 'rag';

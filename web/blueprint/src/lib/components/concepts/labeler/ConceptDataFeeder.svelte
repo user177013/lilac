@@ -10,7 +10,7 @@
     type ConceptSignal,
     type ExampleIn,
     type LilacSchema
-  } from '$lilac';
+  } from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import {ThumbsDownFilled, ThumbsUpFilled} from 'carbon-icons-svelte';
   import {getCandidates, type Candidate, type Candidates} from '../labeler_utils';
@@ -121,7 +121,7 @@
     if (score < 0.8) {
       return 'bg-yellow-500/10';
     }
-    return 'bg-blue-500/10';
+    return 'bg-osmanthus-gold/10';
   }
 
   function getInfo(score: number): string {
@@ -149,7 +149,7 @@
         <div class="mr-2 flex flex-shrink-0 gap-x-1">
           <button
             class="p-2 hover:bg-gray-200"
-            class:text-blue-500={candidate.label === true}
+            class:text-osmanthus-gold={candidate.label === true}
             on:click={() => addLabel(candidate, true)}
           >
             <ThumbsUpFilled />

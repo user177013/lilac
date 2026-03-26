@@ -52,8 +52,8 @@
       class:opacity-40={!canRunTasks}
       on:click|stopPropagation={() => (showTasks = !showTasks)}
       class:bg-white={!runningTasks.length}
-      class:bg-blue-200={runningTasks.length}
-      class:border-blue-400={runningTasks.length}
+      class:bg-osmanthus-apricot={runningTasks.length}
+      class:border-osmanthus-gold={runningTasks.length}
     >
       <div class="relative z-10 flex gap-x-2 truncate">
         {#if runningTasks.length}
@@ -69,7 +69,7 @@
       </div>
       {#if runningTasks.length === 1}
         <div
-          class="absolute left-0 top-0 z-0 h-full bg-blue-400 transition"
+          class="absolute left-0 top-0 z-0 h-full bg-osmanthus-gold transition"
           style:width="{progress * 100}%"
         />
       {/if}

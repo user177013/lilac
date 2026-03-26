@@ -11,7 +11,7 @@ import {
   type LilacValueNodeCasted,
   type Path,
   type Signal
-} from '$lilac';
+} from '$osmanthus';
 import type {SpanHoverNamedValue} from './SpanHoverTooltip.svelte';
 import {colorFromScore} from './colors';
 

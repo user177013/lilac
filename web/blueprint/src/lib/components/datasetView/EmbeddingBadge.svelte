@@ -12,7 +12,7 @@
   class:embedding-badge-nolabel={hideEmbeddingName}
   use:hoverTooltip={{text: 'Embedding index'}}
 >
-  <Tag {...$$restProps} type="purple" icon={AssemblyCluster}>
+  <Tag {...$$restProps} type="osmanthus-teal" icon={AssemblyCluster}>
     {!hideEmbeddingName ? embedding : ''}
   </Tag>
 </div>

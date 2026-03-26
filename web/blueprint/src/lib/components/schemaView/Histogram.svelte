@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {formatValue, type LeafValue, type LilacField} from '$lilac';
+  import {formatValue, type LeafValue, type LilacField} from '$osmanthus';
   import {createEventDispatcher} from 'svelte';
 
   export let field: LilacField;
@@ -39,7 +39,7 @@
     {@const groupName = formatValueOrBin(value)}
     {@const barWidth = `${Math.min(1, count / maxCount) * 100}%`}
     {@const formattedCount = formatValue(count)}
-    {@const backgroundColor = value != null ? 'bg-indigo-200' : 'bg-gray-200'}
+    {@const backgroundColor = value != null ? 'bg-osmanthus-apricot' : 'bg-gray-200'}
 
     <button
       class="flex items-center p-0 text-left text-xs text-black hover:bg-gray-200"

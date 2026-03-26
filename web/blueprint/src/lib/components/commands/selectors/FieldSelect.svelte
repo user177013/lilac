@@ -8,7 +8,7 @@
     serializePath,
     type LilacField,
     type Path
-  } from '$lilac';
+  } from '$osmanthus';
   import {Select, SelectItem, SelectItemGroup, SelectSkeleton} from 'carbon-components-svelte';
 
   export let labelText = 'Field';

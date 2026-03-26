@@ -8,7 +8,7 @@
     type ConceptSignal,
     type LilacField,
     type LilacSchema
-  } from '$lilac';
+  } from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import Expandable from '../../Expandable.svelte';
   import ConceptInsightItems from './ConceptInsightItems.svelte';

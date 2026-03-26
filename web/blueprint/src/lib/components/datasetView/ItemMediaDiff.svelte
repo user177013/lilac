@@ -10,7 +10,7 @@
   } from '$lib/monaco';
   import {getDatasetViewContext, type ColumnComparisonState} from '$lib/stores/datasetViewStore';
   import {getDisplayPath} from '$lib/view_utils';
-  import {getValueNodes, L, type DatasetUISettings, type LilacValueNode} from '$lilac';
+  import {getValueNodes, L, type DatasetUISettings, type LilacValueNode} from '$osmanthus';
   import {PropertyRelationship} from 'carbon-icons-svelte';
   import {hoverTooltip} from '../common/HoverTooltip';
 

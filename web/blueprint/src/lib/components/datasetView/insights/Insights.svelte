@@ -1,6 +1,6 @@
 <script lang="ts">
   import {querySettings} from '$lib/queries/datasetQueries';
-  import {childFields, pathIncludes, type LilacField, type LilacSchema, type Path} from '$lilac';
+  import {childFields, pathIncludes, type LilacField, type LilacSchema, type Path} from '$osmanthus';
   import MediaInsight from './MediaInsight.svelte';
 
   export let schema: LilacSchema;

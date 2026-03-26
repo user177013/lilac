@@ -1,4 +1,4 @@
-import {SignalsService, type SignalInfoWithTypedSchema} from '$lilac';
+import {SignalsService, type SignalInfoWithTypedSchema} from '$osmanthus';
 import {createApiQuery} from './queryUtils';
 
 const SIGNALS_TAG = 'signals';

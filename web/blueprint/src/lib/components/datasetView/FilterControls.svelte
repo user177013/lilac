@@ -4,7 +4,7 @@
   import {getDatasetViewContext} from '$lib/stores/datasetViewStore';
   import {conceptLink} from '$lib/utils';
   import {getSearches} from '$lib/view_utils';
-  import type {Search, SearchType} from '$lilac';
+  import type {Search, SearchType} from '$osmanthus';
   import {Button, Modal, SkeletonText} from 'carbon-components-svelte';
   import {ArrowUpRight, Filter, TrashCan} from 'carbon-icons-svelte';
   import {Command, triggerCommand} from '../commands/Commands.svelte';

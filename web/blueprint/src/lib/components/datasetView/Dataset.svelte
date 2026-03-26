@@ -15,13 +15,14 @@
     CLUSTER_TITLE_FIELD,
     childFields,
     isClusterRootField
-  } from '$lilac';
+  } from '$osmanthus';
   import {ComposedModal, ModalBody, ModalFooter, ModalHeader, Tag} from 'carbon-components-svelte';
-  import {EdgeCluster, Export, Settings, Share, TableOfContents} from 'carbon-icons-svelte';
+  import {EdgeCluster, Export, Grid, Settings, Share, TableOfContents} from 'carbon-icons-svelte';
   import {fade} from 'svelte/transition';
   import ComputeClusterModal from '../ComputeClusterModal.svelte';
   import DatasetPivotViewer from './DatasetPivotViewer.svelte';
   import DatasetSettingsModal from './DatasetSettingsModal.svelte';
+  import DatasetTable from './DatasetTable.svelte';
   import ExportModal from './ExportModal.svelte';
   import SingleItemView from './SingleItemView.svelte';
   import Insights from './insights/Insights.svelte';
@@ -76,6 +77,11 @@
         })
       : null;
   $: clusterToggleLink = $datasetViewStore.viewPivot ? backToItemsLink : clusterLink;
+  $: tableToggleLink = datasetLink($datasetViewStore.namespace, $datasetViewStore.datasetName, $navState, {
+    ...$datasetViewStore,
+    viewTable: !$datasetViewStore.viewTable,
+    viewPivot: false
+  });
 </script>
 
 <Page>
@@ -88,20 +94,32 @@
       </div>
     </Tag>
     <button
-      class:bg-blue-100={!schemaCollapsed}
-      class:outline-blue-400={!schemaCollapsed}
+      class:bg-osmanthus-apricot={!schemaCollapsed}
+      class:outline-osmanthus-gold={!schemaCollapsed}
       class:outline={!schemaCollapsed}
       use:hoverTooltip={{text: schemaCollapsed ? 'Show Schema' : 'Hide Schema'}}
       on:click={toggleSchemaCollapsed}
       on:keypress={toggleSchemaCollapsed}><TableOfContents /></button
     >
+    <a href={tableToggleLink} class="text-black">
+      <button
+        class:bg-osmanthus-apricot={$datasetViewStore.viewTable}
+        class:outline-osmanthus-gold={$datasetViewStore.viewTable}
+        class:outline={$datasetViewStore.viewTable}
+        use:hoverTooltip={{
+          text: !$datasetViewStore.viewTable ? 'Open tabular view' : 'Back to items'
+        }}
+      >
+        <Grid /></button
+      >
+    </a>
     <a href={clusterToggleLink} class="text-black">
       <button
         class:disabled={clusterField == null}
         class:cursor-default={clusterField == null}
         class:opacity-30={clusterField == null}
-        class:bg-blue-100={$datasetViewStore.viewPivot}
-        class:outline-blue-400={$datasetViewStore.viewPivot}
+        class:bg-osmanthus-apricot={$datasetViewStore.viewPivot}
+        class:outline-osmanthus-gold={$datasetViewStore.viewPivot}
         class:outline={$datasetViewStore.viewPivot}
         use:hoverTooltip={{
           text:
@@ -181,6 +199,8 @@
     <div class="h-full w-2/3 flex-grow py-1">
       {#if $datasetViewStore.viewPivot}
         <DatasetPivotViewer />
+      {:else if $datasetViewStore.viewTable}
+        <DatasetTable />
       {:else if itemsViewType == 'scroll'}
         <ScrollView />
       {:else if itemsViewType == 'single_item'}

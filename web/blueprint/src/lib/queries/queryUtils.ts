@@ -1,8 +1,8 @@
 /**
- * Utils for Lilac APIs.
+ * Utils for Osmanthus APIs.
  */
 
-import type {ApiError} from '$lilac';
+import type {ApiError} from '$osmanthus';
 import {
   createMutation,
   createQuery,

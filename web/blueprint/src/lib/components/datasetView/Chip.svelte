@@ -23,6 +23,6 @@
 
 <style lang="postcss">
   .active {
-    @apply bg-purple-200 outline-purple-700;
+    @apply bg-osmanthus-teal outline-osmanthus-charcoal;
   }
 </style>

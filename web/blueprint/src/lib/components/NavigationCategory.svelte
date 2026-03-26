@@ -74,7 +74,7 @@
                       <div class="text-xs">
                         <span
                           class="-ml-2 rounded-lg px-2 py-0.5 text-xs"
-                          class:bg-purple-200={tag != ''}
+                          class:bg-osmanthus-teal={tag != ''}
                           class:bg-gray-100={tag == ''}
                         >
                           {tag || 'No tag'}

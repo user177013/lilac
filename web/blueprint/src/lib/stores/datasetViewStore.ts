@@ -21,7 +21,7 @@ import {
   type SelectRowsOptions,
   type SelectRowsSchemaOptions,
   type SortOrder
-} from '$lilac';
+} from '$osmanthus';
 import {getContext, hasContext, setContext} from 'svelte';
 import {writable} from 'svelte/store';
 
@@ -67,6 +67,8 @@ export interface DatasetViewState {
   viewTrash: boolean;
   // True when we are viewing the pivot table view.
   viewPivot: boolean;
+  // True when we are viewing the classic tabular view.
+  viewTable: boolean;
   pivot?: PivotState;
 
   // Whether the group by view is active.
@@ -110,6 +112,7 @@ export function defaultDatasetViewState(namespace: string, datasetName: string):
     },
     viewTrash: false,
     viewPivot: false,
+    viewTable: false,
     schemaCollapsed: true,
     insightsOpen: false,
     compareColumns: [],

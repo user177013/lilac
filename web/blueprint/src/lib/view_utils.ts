@@ -26,7 +26,7 @@ import {
   type SelectRowsOptions,
   type SemanticSimilaritySignal,
   type SubstringSignal
-} from '$lilac';
+} from '$osmanthus';
 import {
   AssemblyCluster,
   Boolean,
@@ -216,7 +216,7 @@ export function getTaggedDatasets(
     return tagSortPriorities.indexOf(b) - tagSortPriorities.indexOf(a) || a.localeCompare(b);
   });
 
-  const namespaceSortPriorities = ['lilac'];
+  const namespaceSortPriorities = ['osmanthus'];
   const pinnedDatasets: string[] = [];
 
   // Sort each tag by namespace and then dataset name.
@@ -276,7 +276,7 @@ export function getTaggedConcepts(
     }
   }
 
-  const namespaceSortPriorities = ['lilac'];
+  const namespaceSortPriorities = ['osmanthus'];
 
   // Sort each tag by namespace and then dataset name.
   const taggedDatasetGroups: NavigationTagGroup<ConceptInfo>[] = [];
@@ -318,7 +318,7 @@ export function getSortedConcepts(
     }
     namespaceConcepts[c.namespace].push(c);
   }
-  const sortPriorities = [userId, 'lilac'];
+  const sortPriorities = [userId, 'osmanthus'];
   return Object.keys(namespaceConcepts)
     .sort((a, b) => sortPriorities.indexOf(a) - sortPriorities.indexOf(b) || a.localeCompare(b))
     .map(namespace => ({

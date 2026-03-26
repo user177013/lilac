@@ -7,7 +7,7 @@ import {
   type Concept,
   type DataTypeCasted,
   type LilacValueNode
-} from '$lilac';
+} from '$osmanthus';
 
 export interface Candidate {
   rowid: string;

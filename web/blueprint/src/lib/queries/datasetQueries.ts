@@ -13,7 +13,7 @@ import {
   type RemoveLabelsOptions,
   type SelectRowsOptions,
   type SelectRowsResponse
-} from '$lilac';
+} from '$osmanthus';
 import {
   QueryClient,
   createInfiniteQuery,

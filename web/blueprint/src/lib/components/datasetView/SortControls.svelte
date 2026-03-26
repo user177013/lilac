@@ -17,7 +17,7 @@
     type SearchResultInfo,
     type SelectRowsSchemaResult,
     type SortResult
-  } from '$lilac';
+  } from '$osmanthus';
   import type {
     DropdownItem,
     DropdownItemId

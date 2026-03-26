@@ -1,6 +1,6 @@
 <script lang="ts">
   import {queryConcepts} from '$lib/queries/conceptQueries';
-  import type {ConceptSignal} from '$lilac';
+  import type {ConceptSignal} from '$osmanthus';
   import {Select, SelectItem, SelectItemGroup} from 'carbon-components-svelte';
 
   export let rootValue: ConceptSignal;

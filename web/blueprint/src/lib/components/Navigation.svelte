@@ -70,7 +70,7 @@
       tag: '',
       groups: [
         {
-          group: 'lilac',
+          group: 'osmanthus',
           items: (sortedSignals || []).map(s => ({
             name: s.name,
             page: 'signals' as AppPage,
@@ -92,9 +92,9 @@
     <div
       class="header flex flex-row items-center justify-between border-b border-gray-200 px-1 pl-4"
     >
-      <a class="flex flex-row items-center text-xl normal-case" href={homeLink()}>
+      <a class="flex flex-row items-center text-xl font-bold normal-case text-osmanthus-charcoal" href={homeLink()}>
         <img class="logo-img mr-2 rounded opacity-90" src={logo_50x50} alt="Logo" />
-        Lilac
+        Osmanthus
       </a>
       <button
         class="mr-1 opacity-60 hover:bg-gray-200"

@@ -11,7 +11,7 @@
     type LilacValueNode,
     type Path,
     type SignalInfoWithTypedSchema
-  } from '$lilac';
+  } from '$osmanthus';
   import {Button, SkeletonText, Tab, TabContent, Tabs, TextArea} from 'carbon-components-svelte';
   import type {JSONSchema4Type} from 'json-schema';
   import type {JSONError} from 'json-schema-library';

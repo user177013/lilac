@@ -15,7 +15,7 @@
     type ExportOptions,
     type LilacField,
     type LilacSchema
-  } from '$lilac';
+  } from '$osmanthus';
   import {
     Checkbox,
     ComposedModal,

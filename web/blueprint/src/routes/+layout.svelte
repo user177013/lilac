@@ -1,7 +1,7 @@
 <script lang="ts">
   import {queryClient} from '$lib/queries/queryClient';
   import TaskMonitor from '$lib/stores/TaskMonitor.svelte';
-  import {OpenAPI} from '$lilac';
+  import {OpenAPI} from '$osmanthus';
   import {QueryClientProvider} from '@tanstack/svelte-query';
   import {Theme, ToastNotification} from 'carbon-components-svelte';
   import {onMount} from 'svelte';

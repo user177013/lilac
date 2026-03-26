@@ -1,4 +1,4 @@
-import {PATH_KEY, SPAN_KEY, type LilacValueNodeCasted} from '$lilac';
+import {PATH_KEY, SPAN_KEY, type LilacValueNodeCasted} from '$osmanthus';
 import {describe, expect, it} from 'vitest';
 import {mergeSpans} from './view_utils';
 

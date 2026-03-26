@@ -15,7 +15,7 @@
 </script>
 
 <script lang="ts">
-  import {serializePath, type DataTypeCasted, type LilacField, type Path} from '$lilac';
+  import {serializePath, type DataTypeCasted, type LilacField, type Path} from '$osmanthus';
   import {ChevronDown, ChevronUp} from 'carbon-icons-svelte';
   import {slide} from 'svelte/transition';
 
@@ -31,7 +31,7 @@
 
 <div
   class="flex items-center gap-x-1 pr-2 text-xs"
-  class:bg-blue-100={node.isSignal}
+  class:bg-osmanthus-apricot={node.isSignal}
   class:bg-emerald-100={node.isPreviewSignal}
   class:bg-teal-100={node.isLabel}
   style:padding-left={0.25 + (node.path.length - 1) * 0.5 + 'rem'}
@@ -71,7 +71,7 @@
 {#if node.children && node.expanded}
   <div
     transition:slide|local
-    class:bg-blue-100={node.isSignal}
+    class:bg-osmanthus-apricot={node.isSignal}
     class:bg-emerald-100={node.isPreviewSignal}
   >
     {#each node.children as child (serializePath(child.path))}

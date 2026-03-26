@@ -9,7 +9,7 @@
     type Filter,
     type LilacSchema,
     type Op
-  } from '$lilac';
+  } from '$osmanthus';
   import {Command, triggerCommand} from '../commands/Commands.svelte';
   import {hoverTooltip} from '../common/HoverTooltip';
   import RemovableTag from '../common/RemovableTag.svelte';

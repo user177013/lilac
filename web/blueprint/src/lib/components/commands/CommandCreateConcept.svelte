@@ -10,7 +10,7 @@
     deserializePath,
     isSignalField,
     serializePath
-  } from '$lilac';
+  } from '$osmanthus';
   import {
     Button,
     ComposedModal,

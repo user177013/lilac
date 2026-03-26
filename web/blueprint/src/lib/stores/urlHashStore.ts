@@ -1,5 +1,5 @@
 import {base} from '$app/paths';
-import {mergeDeep} from '$lilac';
+import {mergeDeep} from '$osmanthus';
 import {getContext, hasContext, setContext} from 'svelte';
 import {writable, type Writable} from 'svelte/store';
 import {NAV_STORE_KEY, defaultNavigationState, type NavigationState} from './navigationStore';

@@ -2,7 +2,7 @@
   import {queryConcepts} from '$lib/queries/conceptQueries';
   import {queryAuthInfo} from '$lib/queries/serverQueries';
   import {getTaggedConcepts} from '$lib/view_utils';
-  import type {ConceptInfo} from '$lilac';
+  import type {ConceptInfo} from '$osmanthus';
   import {Tag} from 'carbon-components-svelte';
   import CommandSelectList from './CommandSelectList.svelte';
 
@@ -41,7 +41,7 @@
 text-sm opacity-80"
       >
         <div class="py-1">
-          <Tag type="purple" size="sm">{tag}</Tag>
+          <Tag type="osmanthus-teal" size="sm">{tag}</Tag>
         </div>
       </div>
     {/if}

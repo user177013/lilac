@@ -1,6 +1,6 @@
 <script lang="ts">
   import {queryDatasetStats} from '$lib/queries/datasetQueries';
-  import {formatValue, type LilacField, type LilacSchema, type Path} from '$lilac';
+  import {formatValue, type LilacField, type LilacSchema, type Path} from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import ConceptInsight from './ConceptInsight.svelte';
 

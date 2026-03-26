@@ -15,7 +15,7 @@
     isStringField,
     serializePath,
     type LilacField
-  } from '$lilac';
+  } from '$osmanthus';
   import {Modal, OverflowMenu, OverflowMenuItem} from 'carbon-components-svelte';
   import {InProgress} from 'carbon-icons-svelte';
   import {openClusterModal} from '../ComputeClusterModal.svelte';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {Example} from '$lilac';
+  import type {Example} from '$osmanthus';
   import {TextInput} from 'carbon-components-svelte';
   import TrashCan from 'carbon-icons-svelte/lib/TrashCan.svelte';
   import {createEventDispatcher} from 'svelte';

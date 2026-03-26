@@ -5,7 +5,7 @@ This powers: https://huggingface.co/spaces/lilacai/lilac_deployer
 
 from typing import Literal, Optional, Union
 
-import lilac as ll
+import osmanthus as ll
 import streamlit as st
 from datasets import load_dataset_builder
 

@@ -32,7 +32,7 @@
     type LilacField,
     type LilacValueNode,
     type Path
-  } from '$lilac';
+  } from '$osmanthus';
   import {
     CatalogPublish,
     ChevronDown,

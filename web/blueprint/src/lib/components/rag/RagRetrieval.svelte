@@ -15,7 +15,7 @@
 <script lang="ts">
   import {getRagRetrieval} from '$lib/queries/ragQueries';
   import {getRagViewContext} from '$lib/stores/ragViewStore';
-  import type {DataTypeCasted, RagRetrievalResultItem} from '$lilac';
+  import type {DataTypeCasted, RagRetrievalResultItem} from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import {createEventDispatcher} from 'svelte';
   import {colorFromScore} from '../datasetView/colors';

@@ -29,7 +29,7 @@
     {#if $signals.isFetching}
       <SkeletonText />
     {:else}
-      <Tag type="blue">
+      <Tag type="osmanthus-apricot">
         <a class="font-semibold text-black" on:click={() => goto(link)} href={link}
           >{signalName}
         </a>
@@ -38,7 +38,7 @@
   </div>
 
   <div class="flex h-full w-full overflow-x-hidden overflow-y-scroll">
-    <div class="lilac-page flex w-full">
+    <div class="osmanthus-page flex w-full">
       {#if $signals?.isFetching}
         <SkeletonText />
       {:else if $signals?.isError}

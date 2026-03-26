@@ -17,7 +17,7 @@
     persistedHashStore,
     serializeState
   } from '$lib/stores/urlHashStore';
-  import type {Path, RagRetrievalResultItem} from '$lilac';
+  import type {Path, RagRetrievalResultItem} from '$osmanthus';
   import {SkeletonText, TextInput} from 'carbon-components-svelte';
   import {Search} from 'carbon-icons-svelte';
   import SvelteMarkdown from 'svelte-markdown';

@@ -1,4 +1,4 @@
-import {TasksService} from '$lilac';
+import {TasksService} from '$osmanthus';
 import {createApiMutation, createApiQuery} from './queryUtils';
 
 export const TASKS_TAG = 'tasks';

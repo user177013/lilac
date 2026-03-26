@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {ApiError} from '$lilac';
+  import type {ApiError} from '$osmanthus';
   import {
     Modal,
     StructuredList,

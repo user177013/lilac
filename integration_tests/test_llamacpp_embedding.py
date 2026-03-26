@@ -1,9 +1,9 @@
 import numpy as np
 import pytest
 
-from lilac.embeddings import llamacpp as llamacpp_mod
-from lilac.embeddings.llamacpp import LlamaCppEmbedding
-from lilac.schema import EMBEDDING_KEY, SPAN_KEY, TEXT_SPAN_START_FEATURE, TEXT_SPAN_END_FEATURE
+from osmanthus.embeddings import llamacpp as llamacpp_mod
+from osmanthus.embeddings.llamacpp import LlamaCppEmbedding
+from osmanthus.schema import EMBEDDING_KEY, SPAN_KEY, TEXT_SPAN_START_FEATURE, TEXT_SPAN_END_FEATURE
 
 
 class FakeModel:

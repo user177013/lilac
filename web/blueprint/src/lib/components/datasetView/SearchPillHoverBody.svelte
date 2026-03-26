@@ -1,6 +1,6 @@
 <script lang="ts">
   import {getDisplayPath} from '$lib/view_utils';
-  import type {KeywordSearch, Search, SemanticSearch} from '$lilac';
+  import type {KeywordSearch, Search, SemanticSearch} from '$osmanthus';
   import {Tag} from 'carbon-components-svelte';
   import EmbeddingBadge from './EmbeddingBadge.svelte';
 

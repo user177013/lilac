@@ -1,4 +1,4 @@
-import {ConceptsService} from '$lilac';
+import {ConceptsService} from '$osmanthus';
 import {DATASETS_TAG} from './datasetQueries';
 import {queryClient} from './queryClient';
 import {createApiMutation, createApiQuery} from './queryUtils';

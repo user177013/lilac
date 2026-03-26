@@ -13,7 +13,7 @@
     type GroupsSortBy,
     type LilacSchema,
     type SortOrder
-  } from '$lilac';
+  } from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import {ChevronLeft, ChevronRight} from 'carbon-icons-svelte';
 

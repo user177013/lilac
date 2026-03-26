@@ -11,7 +11,7 @@ from typing import Union
 
 import click
 from huggingface_hub import CommitOperationAdd, CommitOperationDelete, HfApi
-from lilac.env import env
+from osmanthus.env import env
 
 HF_SPACE_ID = 'lilacai/lilac_deployer'
 STREAMLIT_APP_DIR = 'lilac_deployer'

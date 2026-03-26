@@ -3,7 +3,7 @@
   import {querySignals} from '$lib/queries/signalQueries';
   import {getDatasetViewContext} from '$lib/stores/datasetViewStore';
   import {conceptLink} from '$lib/utils';
-  import {SIGNAL_INPUT_TYPE_TO_VALID_DTYPES, type ConceptInfo, type LilacField} from '$lilac';
+  import {SIGNAL_INPUT_TYPE_TO_VALID_DTYPES, type ConceptInfo, type LilacField} from '$osmanthus';
   import {ComposedModal, ModalBody, ModalFooter, ModalHeader} from 'carbon-components-svelte';
   import {ArrowUpRight} from 'carbon-icons-svelte';
   import type {JSONSchema4Type} from 'json-schema';

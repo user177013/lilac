@@ -9,7 +9,7 @@
     serializePath,
     type LilacField,
     type LilacSchema
-  } from '$lilac';
+  } from '$osmanthus';
   import {InlineNotification, Select, SelectItem, SelectSkeleton} from 'carbon-components-svelte';
   import {createEventDispatcher} from 'svelte';
 

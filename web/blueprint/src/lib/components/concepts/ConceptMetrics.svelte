@@ -1,6 +1,6 @@
 <script lang="ts">
   import {conceptModelMutation} from '$lib/queries/conceptQueries';
-  import type {Concept, ConceptModelInfo} from '$lilac';
+  import type {Concept, ConceptModelInfo} from '$osmanthus';
   import {Button, InlineLoading} from 'carbon-components-svelte';
   import {Chip} from 'carbon-icons-svelte';
   import {hoverTooltip} from '../common/HoverTooltip';

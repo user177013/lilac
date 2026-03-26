@@ -38,7 +38,7 @@
     type SignalInfoWithTypedSchema,
     type StatsResult,
     type UnaryFilter
-  } from '$lilac';
+  } from '$osmanthus';
   import type {QueryObserverResult} from '@tanstack/svelte-query';
   import {ComboBox, Dropdown, Tag} from 'carbon-components-svelte';
   import {Add, AssemblyCluster, Chip, Search, SearchAdvanced} from 'carbon-icons-svelte';
@@ -566,7 +566,7 @@
   }
   /* Style the combobox item's parent div with a background color depending on type of search. */
   :global(.bx--list-box__menu-item:not(.bx--list-box__menu-item--highlighted):has(.isSignal)) {
-    @apply bg-blue-50;
+    @apply bg-osmanthus-floral;
   }
   :global(.bx--list-box__menu-item:not(.bx--list-box__menu-item--highlighted):has(.isConcept)) {
     @apply bg-emerald-100;

@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-  import {isNumeric, type DataTypeCasted, type Path} from '$lilac';
+  import {isNumeric, type DataTypeCasted, type Path} from '$osmanthus';
   import {colorFromScore} from './colors';
   import type {SpanValueInfo} from './spanHighlight';
 

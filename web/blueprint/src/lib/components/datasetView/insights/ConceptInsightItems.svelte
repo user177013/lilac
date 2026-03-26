@@ -13,7 +13,7 @@
     type LilacSchema,
     type LilacValueNode,
     type Path
-  } from '$lilac';
+  } from '$osmanthus';
   import {Button, SkeletonText} from 'carbon-components-svelte';
   import {ArrowUpRight} from 'carbon-icons-svelte';
   import StringSpanHighlight from '../StringSpanHighlight.svelte';

@@ -1,4 +1,4 @@
-import type {ApiError} from '$lilac';
+import type {ApiError} from '$osmanthus';
 import {QueryClient} from '@tanstack/svelte-query';
 import {writable} from 'svelte/store';
 

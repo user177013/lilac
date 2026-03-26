@@ -1,6 +1,6 @@
 <script lang="ts">
   import {queryEmbeddings} from '$lib/queries/signalQueries';
-  import type {SignalInfoWithTypedSchema} from '$lilac';
+  import type {SignalInfoWithTypedSchema} from '$osmanthus';
   import CommandSelectList from './CommandSelectList.svelte';
 
   export let embedding: SignalInfoWithTypedSchema | undefined = undefined;

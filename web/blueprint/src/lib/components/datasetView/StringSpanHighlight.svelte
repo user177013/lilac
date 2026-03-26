@@ -20,7 +20,7 @@
     type LilacValueNode,
     type LilacValueNodeCasted,
     type Path
-  } from '$lilac';
+  } from '$osmanthus';
   import {getContext} from 'svelte';
   import SvelteMarkdown from 'svelte-markdown';
   import type {Writable} from 'svelte/store';

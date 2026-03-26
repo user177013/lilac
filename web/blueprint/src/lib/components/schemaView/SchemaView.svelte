@@ -6,7 +6,7 @@
     querySelectRowsSchema
   } from '$lib/queries/datasetQueries';
   import {getDatasetViewContext, getSelectRowsSchemaOptions} from '$lib/stores/datasetViewStore';
-  import {DELETED_LABEL_KEY, ROWID, formatValue} from '$lilac';
+  import {DELETED_LABEL_KEY, ROWID, formatValue} from '$osmanthus';
   import {Modal, SkeletonText, TextArea} from 'carbon-components-svelte';
   import {Information, TrashCan, View, ViewOff} from 'carbon-icons-svelte';
   import {hoverTooltip} from '../common/HoverTooltip';
@@ -139,7 +139,7 @@
   >
     <div class="mb-4 text-sm">
       This dataset configuration represents the transformations that created the dataset, including
-      signals, embeddings, and user settings. This can be used with lilac.load to generate the
+      signals, embeddings, and user settings. This can be used with osmanthus.load to generate the
       dataset with the same view as presented.
     </div>
     <div class="font-mono text-xs">config.yml</div>

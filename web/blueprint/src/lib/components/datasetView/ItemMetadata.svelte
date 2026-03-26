@@ -19,7 +19,7 @@
     type LilacSelectRowsSchema,
     type LilacValueNode,
     type Path
-  } from '$lilac';
+  } from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import ItemMetadataField, {type RenderNode} from './ItemMetadataField.svelte';
 

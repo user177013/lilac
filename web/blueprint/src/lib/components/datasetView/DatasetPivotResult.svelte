@@ -22,7 +22,7 @@
   import {queryDatasetSchema} from '$lib/queries/datasetQueries';
   import {getNavigationContext} from '$lib/stores/navigationStore';
   import {datasetLink} from '$lib/utils';
-  import type {BinaryFilter, Path, UnaryFilter} from '$lilac';
+  import type {BinaryFilter, Path, UnaryFilter} from '$osmanthus';
   import {ArrowUpRight} from 'carbon-icons-svelte';
   import {onDestroy, onMount} from 'svelte';
   import Carousel from '../common/Carousel.svelte';
@@ -100,13 +100,13 @@
       </div>
       <a class="mb-2 flex flex-row" href={outerGroupLink}>
         <button
-          class="flex flex-row items-center gap-x-2 border border-neutral-300 bg-violet-200 bg-opacity-70 font-light text-black shadow"
+          class="flex flex-row items-center gap-x-2 border border-neutral-300 bg-osmanthus-apricot bg-opacity-70 font-light text-black shadow"
           >Explore <ArrowUpRight /></button
         ></a
       >
     </div>
     <div
-      class="flex h-full w-full flex-row flex-wrap rounded-lg border border-neutral-200 bg-violet-100 bg-opacity-50 px-4 pb-2 pt-4"
+      class="flex h-full w-full flex-row flex-wrap rounded-lg border border-neutral-200 bg-osmanthus-apricot bg-opacity-50 px-4 pb-2 pt-4"
     >
       <Carousel items={group.inner} pageSize={itemsPerPage}>
         <div class="w-full" slot="item" let:item>

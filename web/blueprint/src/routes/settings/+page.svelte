@@ -14,7 +14,7 @@
 </script>
 
 <Page>
-  <div class="lilac-page flex p-8">
+  <div class="osmanthus-page flex p-8">
     <div class="flex flex-col gap-y-6">
       <section class="flex flex-col gap-y-1">
         <div class="text-lg text-gray-700">Settings</div>

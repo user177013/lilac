@@ -10,7 +10,7 @@
   import {createDatasetViewStore} from '$lib/stores/datasetViewStore';
   import {getNavigationContext} from '$lib/stores/navigationStore';
   import {datasetLink} from '$lib/utils';
-  import type {Concept} from '$lilac';
+  import type {Concept} from '$osmanthus';
   import {Button, ToastNotification} from 'carbon-components-svelte';
   import {View, ViewOff} from 'carbon-icons-svelte';
   import ThumbsDownFilled from 'carbon-icons-svelte/lib/ThumbsDownFilled.svelte';

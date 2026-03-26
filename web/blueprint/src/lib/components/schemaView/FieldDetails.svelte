@@ -13,7 +13,7 @@
     type LeafValue,
     type LilacField,
     type SortOrder
-  } from '$lilac';
+  } from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import {Information} from 'carbon-icons-svelte';
   import {hoverTooltip} from '../common/HoverTooltip';

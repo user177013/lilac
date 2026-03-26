@@ -53,13 +53,9 @@
         <slot name="header-right" />
         <div>
           <OverflowMenu flipped icon={Help}>
-            <OverflowMenuItem href="https://lilacml.com" text="Website" />
-            <OverflowMenuItem href="https://docs.lilacml.com" text="Documentation" />
-            <OverflowMenuItem href="https://discord.gg/jNzw9mC8pp" text="Discord" />
-            <OverflowMenuItem
-              href="https://github.com/lilacai/lilac/issues/new"
-              text="File a bug"
-            />
+            <OverflowMenuItem href="https://github.com/user177013/osmanthus" text="Repository" />
+            <OverflowMenuItem href="https://github.com/user177013/osmanthus/wiki" text="Documentation" />
+            <OverflowMenuItem href="https://github.com/user177013/osmanthus/issues/new" text="File a bug" />
           </OverflowMenu>
         </div>
         {#if !hideTasks}

@@ -4,7 +4,7 @@
   import {createDatasetViewStore} from '$lib/stores/datasetViewStore';
   import {getNavigationContext} from '$lib/stores/navigationStore';
   import {datasetLink} from '$lib/utils';
-  import type {Concept, LilacSchema} from '$lilac';
+  import type {Concept, LilacSchema} from '$osmanthus';
   import {Button, ToastNotification} from 'carbon-components-svelte';
   import {ArrowUpRight} from 'carbon-icons-svelte';
   import {get} from 'svelte/store';

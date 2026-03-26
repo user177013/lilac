@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'lilac-xlight': '#e6d7ff',
-        'lilac-light': '#e7d1ff',
-        'lilac-medium': '#e1c4ff',
-        'lilac-dark': '#d8b9ff',
-        'lilac-darkest': '#d2afff'
+        'osmanthus-floral': '#FAF7F0',
+        'osmanthus-charcoal': '#2D3747',
+        'osmanthus-teal': '#89BD9E',
+        'osmanthus-apricot': '#FFDAB9',
+        'osmanthus-gold': '#F59E0B'
       }
     }
   },

@@ -1,4 +1,4 @@
-import {GoogleLoginService} from '$lilac';
+import {GoogleLoginService} from '$osmanthus';
 import {CONCEPTS_TAG} from './conceptQueries';
 import {DATASETS_TAG} from './datasetQueries';
 import {queryClient} from './queryClient';

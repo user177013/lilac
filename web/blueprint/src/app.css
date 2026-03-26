@@ -56,10 +56,10 @@ button:hover {
   @apply bg-gray-200;
 }
 button:focus {
-  @apply outline outline-2 outline-blue-700;
+  @apply outline outline-2 outline-osmanthus-gold;
 }
 button:active {
-  @apply bg-gray-300 outline outline-1 outline-blue-700;
+  @apply bg-gray-300 outline outline-1 outline-osmanthus-gold;
 }
 button:disabled {
   @apply pointer-events-none bg-transparent;
@@ -71,10 +71,10 @@ button:disabled {
 }
 .bx--btn.bx--btn--primary {
   @apply text-white;
-  background-color: #4550e8;
+  background-color: #F59E0B;
 }
 .bx--btn.bx--btn--primary:hover {
-  background-color: #1741c1;
+  background-color: #D97706;
 }
 .bx--btn.bx--btn--secondary {
   @apply text-white;
@@ -132,41 +132,41 @@ button:disabled {
   height: 4rem;
 }
 
-.lilac-container {
+.osmanthus-container {
   container-type: inline-size;
   @apply flex w-full flex-col overflow-y-auto;
 }
 
-.lilac-page {
+.osmanthus-page {
   @apply mx-auto w-full py-8;
 }
 
 @container (min-width: 640px) {
-  .lilac-page {
+  .osmanthus-page {
     max-width: 640px;
   }
 }
 
 @container (min-width: 768px) {
-  .lilac-page {
+  .osmanthus-page {
     max-width: 768px;
   }
 }
 
 @container (min-width: 1024px) {
-  .lilac-page {
+  .osmanthus-page {
     max-width: 1024px;
   }
 }
 
 @container (min-width: 1280px) {
-  .lilac-page {
+  .osmanthus-page {
     max-width: 1280px;
   }
 }
 
 @container (min-width: 1536px) {
-  .lilac-page {
+  .osmanthus-page {
     max-width: 1536px;
   }
 }

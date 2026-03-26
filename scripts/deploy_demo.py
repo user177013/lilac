@@ -31,12 +31,12 @@ from typing import Optional
 
 import click
 from huggingface_hub import HfApi, snapshot_download
-from lilac.config import read_config
-from lilac.data.dataset_storage_utils import upload
-from lilac.deploy import deploy_project
-from lilac.env import env
-from lilac.load import load
-from lilac.utils import get_datasets_dir, get_hf_dataset_repo_id, log
+from osmanthus.config import read_config
+from osmanthus.data.dataset_storage_utils import upload
+from osmanthus.deploy import deploy_project
+from osmanthus.env import env
+from osmanthus.load import load
+from osmanthus.utils import get_datasets_dir, get_hf_dataset_repo_id, log
 
 
 @click.command()

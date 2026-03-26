@@ -1,294 +1,73 @@
-<h1 align="center">Lilac</h1>
-<h3 align="center" style="font-size: 20px; margin-bottom: 4px">Better data, better AI</h3>
+<h1 align="center">Osmanthus</h1>
+<h3 align="center" style="font-size: 20px; margin-bottom: 4px">Modernize. Organize. Osmanthus.</h3>
 <p align="center">
-  <a style="padding: 4px;"  href="https://lilacai-lilac.hf.space/">
-    <span style="margin-right: 4px; font-size: 12px">🔗</span> <span style="font-size: 14px">Try the Lilac web demo!</span>
+  <a style="padding: 4px;" href="https://github.com/user177013/lilac">
+    <span style="margin-right: 4px; font-size: 12px">🔗</span> <span style="font-size: 14px">Maintained fork of the archived Lilac project.</span>
   </a>
   <br/><br/>
-  <a href="https://lilacml.com/">
-        <img alt="Site" src="https://img.shields.io/badge/Site-lilacml.com-ed2dd0?link=https%3A%2F%2Flilacml.com"/>
-    </a>
-    <a href="https://discord.gg/jNzw9mC8pp">
-        <img alt="Discord" src="https://img.shields.io/discord/1135996772280451153?label=Join%20Discord" />
-    </a>
-    <a href="https://github.com/lilacai/lilac/blob/main/LICENSE">
-          <img alt="License Apache 2.0" src="https://img.shields.io/badge/License-Apache 2.0-blue.svg?style=flat&color=ed2dd0" height="20" width="auto">
+    <a href="https://github.com/user177013/lilac/blob/main/LICENSE">
+          <img alt="License Apache 2.0" src="https://img.shields.io/badge/License-Apache 2.0-blue.svg?style=flat&color=89bd9e" height="20" width="auto">
     </a>
     <br/>
-    <a href="https://github.com/lilacai/lilac">
-      <img src="https://img.shields.io/github/stars/lilacai/lilac?style=social" />
-    </a>
-    <a href="https://twitter.com/lilac_ai">
-      <img src="https://img.shields.io/twitter/follow/lilac_ai" alt="Follow on Twitter" />
+    <a href="https://github.com/user177013/lilac">
+      <img src="https://img.shields.io/github/stars/user177013/lilac?style=social" />
     </a>
 </p>
 
-Lilac is a tool for exploration, curation and quality control of datasets for training, fine-tuning
-and monitoring LLMs.
+Osmanthus is a production-ready fork of the archived [Lilac](https://github.com/lilacai/lilac) project. It is designed for exploration, curation, and quality control of datasets for LLMs, with a focus on modern embedding infrastructure and Windows stability.
 
-Lilac is used by companies like [Cohere](https://cohere.com/) and
-[Databricks](https://www.databricks.com/) to visualize, quantify and improve the quality of
-pre-training and fine-tuning data.
+Osmanthus continues the mission of providing "Better data, better AI" by maintaining the core registry-based signal architecture while decoupling from defunct hosted services.
 
-Lilac runs **on-device** using open-source LLMs with a UI and Python API.
+## ✨ Key Features in this Fork
 
-## 🆒 New
+- **Modern GGUF Support**: Enhanced `llama-cpp-python` integration for state-of-the-art GGUF embeddings.
+- **Independent Identity**: Full decoupling from the defunct "Lilac Garden" infrastructure.
+- **Windows Optimized**: Critical stability fixes for high-performance embedding pipelines on Windows systems.
+- **Botanical UI**: A premium, high-density design system focusing on "Cockpit Mode" utility.
 
-- [Lilac Garden](https://www.lilacml.com/#garden) is our hosted platform for blazing fast
-  dataset-level computations. [Sign up](https://forms.gle/Gz9cpeKJccNar5Lq8) to join the pilot.
-- Cluster & title millions of documents with the power of LLMs.
-  [Explore and search](https://lilacai-lilac.hf.space/datasets#lilac/OpenOrca&query=%7B%7D&viewPivot=true&pivot=%7B%22outerPath%22%3A%5B%22question__cluster%22%2C%22category_title%22%5D%2C%22innerPath%22%3A%5B%22question__cluster%22%2C%22cluster_title%22%5D%7D)
-  over 36,000 clusters of 4.3M documents in OpenOrca
+## Why Osmanthus?
 
-## Why use Lilac?
+- **Interactive Exploration**: Search, filter, cluster, and annotate your data with an LLM-powered interface.
+- **On-Device Performance**: Runs entirely on your local machine using open-source LLMs.
+- **Data Hygiene**: Detect PII, remove duplicates, and analyze text statistics to lower training costs.
+- **Centralized Insights**: Understand how your data evolves across the entire ML lifecycle.
 
-- Explore your data interactively with LLM-powered search, filter, clustering and annotation.
-- Curate AI data, applying best practices like removing duplicates, PII and obscure content to
-  reduce dataset size and lower training cost and time.
-- Inspect and collaborate with your team on a single, centralized dataset to improve data quality.
-- Understand how data changes over time.
+<img alt="Osmanthus UI" src="docs/_static/dataset/dataset_cluster_view.png">
 
-Lilac can offload expensive computations to [Lilac Garden](https://www.lilacml.com/#garden), our
-hosted platform for blazing fast dataset-level computations.
-
-<img alt="image" src="docs/_static/dataset/dataset_cluster_view.png">
-
-> See our [3min walkthrough video](https://www.youtube.com/watch?v=RrcvVC3VYzQ)
-
-## 🔥 Getting started
+## 🔥 Getting Started
 
 ### 💻 Install
 
 ```sh
-pip install lilac[all]
+# Install directly from the fork repository
+pip install git+https://github.com/user177013/lilac.git
 ```
 
-If you prefer no local installation, you can duplicate our
-[Spaces demo](https://lilacai-lilac.hf.space/) by following documentation
-[here](https://docs.lilacml.com/deployment/huggingface_spaces.html).
+### 🌐 Start the Server
 
-For more detailed instructions, see our
-[installation guide](https://docs.lilacml.com/getting_started/installation.html).
-
-### 🌐 Start a webserver
-
-Start a Lilac webserver with our `lilac` CLI:
+Start the Osmanthus webserver using the new CLI:
 
 ```sh
-lilac start ~/my_project
+osmanthus start ~/my_project
 ```
 
-Or start the Lilac webserver from Python:
-
-```py
-import lilac as ll
-
-ll.start_server(project_dir='~/my_project')
-```
-
-This will open start a webserver at http://localhost:5432/ where you can now load datasets and
-explore them.
-
-### Lilac Garden
-
-Lilac Garden is our hosted platform for running dataset-level computations. We utilize powerful GPUs
-to accelerate expensive signals like Clustering, Embedding, and PII.
-[Sign up](https://forms.gle/Gz9cpeKJccNar5Lq8) to join the pilot.
-
-- Cluster and title **a million** data points in **20 mins**
-- Embed your dataset at **half a billion** tokens per min
-- Run your own signal
-
-### 📊 Load data
-
-Datasets can be loaded directly from HuggingFace, Parquet, CSV, JSON,
-[LangSmith from LangChain](https://www.langchain.com/langsmith), SQLite,
-[LLamaHub](https://llamahub.ai/), Pandas, Parquet, and more. More documentation
-[here](https://docs.lilacml.com/datasets/dataset_load.html).
+Or from Python:
 
 ```python
-import lilac as ll
-
-ll.set_project_dir('~/my_project')
-dataset = ll.from_huggingface('imdb')
+import osmanthus as osman
+osman.start_server(project_dir='~/my_project')
 ```
 
-If you prefer, you can load datasets directly from the UI without writing any Python:
+The server will be available at http://localhost:5432/.
 
-<img width="600" alt="image" src="https://github.com/lilacai/lilac/assets/1100749/d5d385ce-f11c-47e6-9c00-ea29983e24f0">
+## 📊 Documentation
 
-### 🔎 Explore
+For detailed guides on loading datasets from HuggingFace, Parquet, JSON, and more, please refer to the [docs/](docs/) folder.
 
-<!-- prettier-ignore -->
-> [!NOTE]
-> 🔗 Explore [OpenOrca](https://lilacai-lilac.hf.space/datasets#lilac/OpenOrca) and
-> [its clusters](https://lilacai-lilac.hf.space/datasets#lilac/OpenOrca&query=%7B%7D&viewPivot=true&pivot=%7B%22outerPath%22%3A%5B%22question__cluster%22%2C%22category_title%22%5D%2C%22innerPath%22%3A%5B%22question__cluster%22%2C%22cluster_title%22%5D%7D)
-> before installing!
+## ⚖️ License
 
-Once we've loaded a dataset, we can explore it from the UI and get a sense for what's in the data.
-More documentation [here](https://docs.lilacml.com/datasets/dataset_explore.html).
+Osmanthus is licensed under the [Apache License, Version 2.0](LICENSE). 
+This project is an independent fork and is not affiliated with the original Lilac AI Inc. team.
 
-<img alt="image" src="docs/_static/dataset/dataset_explore.png">
-
-### ✨ Clustering
-
-Cluster any text column to get automated dataset insights:
-
-```python
-dataset = ll.get_dataset('local', 'imdb')
-dataset.cluster('text') # add `use_garden=True` to offload to Lilac Garden
-```
-
-<!-- prettier-ignore -->
-> [!TIP]
-> Clustering on device can be slow or impractical, especially on machines without a powerful GPU or
-> large memory. Offloading the compute to [Lilac Garden](https://www.lilacml.com/#garden), our
-hosted data processing platform, can speedup clustering by more than 100x.
-
-<img alt="image" src="docs/_static/dataset/dataset_cluster_view.png">
-
-### ⚡ Annotate with Signals (PII, Text Statistics, Language Detection, Neardup, etc)
-
-Annotating data with signals will produce another column in your data.
-
-```python
-dataset = ll.get_dataset('local', 'imdb')
-dataset.compute_signal(ll.LangDetectionSignal(), 'text') # Detect language of each doc.
-
-# [PII] Find emails, phone numbers, ip addresses, and secrets.
-dataset.compute_signal(ll.PIISignal(), 'text')
-
-# [Text Statistics] Compute readability scores, number of chars, TTR, non-ascii chars, etc.
-dataset.compute_signal(ll.PIISignal(), 'text')
-
-# [Near Duplicates] Computes clusters based on minhash LSH.
-dataset.compute_signal(ll.NearDuplicateSignal(), 'text')
-
-# Print the resulting manifest, with the new field added.
-print(dataset.manifest())
-```
-
-We can also compute signals from the UI:
-
-<img width="400" alt="image" src="docs/_static/dataset/dataset_compute_signal_modal.png">
-
-### 🔎 Search
-
-Semantic and conceptual search requires computing an embedding first:
-
-```python
-dataset.compute_embedding('gte-small', path='text')
-```
-
-#### Semantic search
-
-In the UI, we can search by semantic similarity or by classic keyword search to find chunks of
-documents similar to a query:
-
-<img width="600" alt="image" src="https://github.com/lilacai/lilac/assets/1100749/4adb603e-8dca-43a3-a492-fd862e194a5a">
-
-<img width="600" alt="image" src="https://github.com/lilacai/lilac/assets/1100749/fdee2127-250b-4e06-9ff9-b1023c03b72f">
-
-We can run the same search in Python:
-
-```python
-rows = dataset.select_rows(
-  columns=['text', 'label'],
-  searches=[
-    ll.SemanticSearch(
-      path='text',
-      embedding='gte-small')
-  ],
-  limit=1)
-
-print(list(rows))
-```
-
-> [!TIP]
-> If you have multiple embedding models computed (e.g., `gte-small` and a custom GGUF model), Lilac will use your **Preferred embedding** for the search bar. You can change this in the **Dataset Settings (Cog Icon) > Fields** tab.
-
-#### Conceptual search
-
-Conceptual search is a much more controllable and powerful version of semantic search, where
-"concepts" can be taught to Lilac by providing positive and negative examples of that concept.
-
-Lilac provides a set of built-in concepts, but you can create your own for very specif
-
-<img width="600" alt="image" src="https://github.com/lilacai/lilac/assets/1100749/9941024b-7c24-4d87-ae46-925f8da435e1">
-
-We can create a concept in Python with a few examples, and search by it:
-
-```python
-concept_db = ll.DiskConceptDB()
-db.create(namespace='local', name='spam')
-# Add examples of spam and not-spam.
-db.edit('local', 'spam', ll.concepts.ConceptUpdate(
-  insert=[
-    ll.concepts.ExampleIn(label=False, text='This is normal text.'),
-    ll.concepts.ExampleIn(label=True, text='asdgasdgkasd;lkgajsdl'),
-    ll.concepts.ExampleIn(label=True, text='11757578jfdjja')
-  ]
-))
-
-# Search by the spam concept.
-rows = dataset.select_rows(
-  columns=['text', 'label'],
-  searches=[
-    ll.ConceptSearch(
-      path='text',
-      concept_namespace='lilac',
-      concept_name='spam',
-      embedding='gte-small')
-  ],
-  limit=1)
-
-print(list(rows))
-```
-
-### 🏷️ Labeling
-
-Lilac allows you to label individual points, or slices of data:
-<img width="600" alt="image" src="docs/_static/dataset/dataset_add_label_tag.png">
-
-We can also label all data given a filter. In this case, adding the label "short" to all text with a
-small amount of characters. This field was produced by the automatic `text_statistics` signal.
-
-<img width="600" alt="image" src="docs/_static/dataset/dataset_add_label_all_short.png">
-
-We can do the same in Python:
-
-```python
-dataset.add_labels(
-  'short',
-  filters=[
-    (('text', 'text_statistics', 'num_characters'), 'less', 1000)
-  ]
-)
-```
-
-Labels can be exported for downstream tasks. Detailed documentation
-[here](https://docs.lilacml.com/datasets/dataset_labels.html).
-
-
-### 🦙 Llama.cpp BYOM Embeddings
-Lilac now supports "Bring Your Own Model" (BYOM) for Llama.cpp. You can use any GGUF embedding model by placing it in `models/gguf/` within your project directory. 
-
-Lilac automatically scans this directory and registers each model as a unique signal in the UI. You can configure model-specific settings (like `n_ctx` or `n_gpu_layers`) in the automatically generated `.config.yaml` file that appears next to your model after the first scan.
-
-```sh
-# Example folder structure:
-my_project/
-├── models/
-│   └── gguf/
-│       ├── gemma-embedding.gguf
-│       └── gemma-embedding.config.yaml  # Auto-generated
-└── ...
-```
-
-## 💬 Contact
-
-
-For bugs and feature requests, please
-[file an issue on GitHub](https://github.com/lilacai/lilac/issues).
-
-For general questions, please [visit our Discord](https://discord.com/invite/jNzw9mC8pp).
+---
+*Created with focus on performance and independence.*

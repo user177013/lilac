@@ -15,7 +15,7 @@
     getHighlightedFields,
     getMediaFields
   } from '$lib/view_utils';
-  import {L, ROWID, valueAtPath} from '$lilac';
+  import {L, ROWID, valueAtPath} from '$osmanthus';
   import {InlineNotification, SkeletonText} from 'carbon-components-svelte';
   import {setContext} from 'svelte';
   import InfiniteScroll from 'svelte-infinite-scroll';

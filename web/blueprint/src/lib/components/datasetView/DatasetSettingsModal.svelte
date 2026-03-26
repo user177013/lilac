@@ -10,7 +10,7 @@
   } from '$lib/queries/datasetQueries';
   import {queryClient} from '$lib/queries/queryClient';
   import {datasetIdentifier, homeLink} from '$lib/utils';
-  import {getSchemaLabels, type DatasetSettings} from '$lilac';
+  import {getSchemaLabels, type DatasetSettings} from '$osmanthus';
   import {
     ComboBox,
     ComposedModal,
@@ -149,7 +149,7 @@
             {#if newSettings?.tags?.length}
               <div class="flex h-8 flex-row">
                 {#each newSettings.tags as tag}
-                  <RemovableTag type="purple" on:remove={() => removeTag(tag)}>
+                  <RemovableTag type="osmanthus-teal" on:remove={() => removeTag(tag)}>
                     {tag}
                   </RemovableTag>
                 {/each}

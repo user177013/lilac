@@ -1,4 +1,4 @@
-import {DefaultService} from '$lilac';
+import {DefaultService} from '$osmanthus';
 import {createApiQuery} from './queryUtils';
 
 export const AUTH_INFO_TAG = 'auth_info';

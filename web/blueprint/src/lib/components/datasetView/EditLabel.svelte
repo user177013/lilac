@@ -12,7 +12,7 @@
   import {queryAuthInfo} from '$lib/queries/serverQueries';
   import {getDatasetViewContext} from '$lib/stores/datasetViewStore';
   import {getNotificationsContext} from '$lib/stores/notificationsStore';
-  import {getSchemaLabels, type AddLabelsOptions, type RemoveLabelsOptions} from '$lilac';
+  import {getSchemaLabels, type AddLabelsOptions, type RemoveLabelsOptions} from '$osmanthus';
   import {Modal} from 'carbon-components-svelte';
   import {Tag, type CarbonIcon} from 'carbon-icons-svelte';
   import {createEventDispatcher} from 'svelte';

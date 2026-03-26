@@ -24,11 +24,11 @@ Args:
 from typing import Optional
 
 import click
-from lilac.data.dataset_storage_utils import upload
-from lilac.deploy import deploy_project
-from lilac.env import env
-from lilac.project import read_project_config
-from lilac.utils import get_hf_dataset_repo_id
+from osmanthus.data.dataset_storage_utils import upload
+from osmanthus.deploy import deploy_project
+from osmanthus.env import env
+from osmanthus.project import read_project_config
+from osmanthus.utils import get_hf_dataset_repo_id
 
 
 @click.command()

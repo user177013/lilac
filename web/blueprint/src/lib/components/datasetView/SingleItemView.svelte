@@ -6,7 +6,7 @@
   } from '$lib/queries/datasetQueries';
   import {getDatasetViewContext, getSelectRowsSchemaOptions} from '$lib/stores/datasetViewStore';
   import {getHighlightedFields, getMediaFields} from '$lib/view_utils';
-  import {L, ROWID, type SelectRowsResponse} from '$lilac';
+  import {L, ROWID, type SelectRowsResponse} from '$osmanthus';
   import DatasetControls from './DatasetControls.svelte';
   import PrefetchRowItem from './PrefetchRowItem.svelte';
   import RowItem from './RowItem.svelte';

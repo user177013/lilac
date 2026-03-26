@@ -12,7 +12,7 @@
     serializePath,
     type DatasetSettings,
     type LilacField
-  } from '$lilac';
+  } from '$osmanthus';
   import {Select, SelectItem, SelectSkeleton, SkeletonText, Toggle} from 'carbon-components-svelte';
   import {Add, ArrowDown, ArrowUp, Close, Document, Table} from 'carbon-icons-svelte';
   import ButtonDropdown from '../ButtonDropdown.svelte';
@@ -169,7 +169,7 @@
                   <div class="table-row h-10">
                     <div
                       class="table-cell w-12 rounded-md p-0.5 align-middle"
-                      class:bg-blue-200={isSignal}
+                      class:bg-osmanthus-apricot={isSignal}
                       class:bg-teal-100={isLabel}
                     >
                       {#if mediaField.dtype && mediaField.dtype.type !== 'map'}

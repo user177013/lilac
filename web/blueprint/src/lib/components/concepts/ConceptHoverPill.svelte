@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {formatValue, type ConceptMetrics} from '$lilac';
+  import {formatValue, type ConceptMetrics} from '$osmanthus';
   import {scoreToColor, scoreToText} from './colors';
   export let metrics: ConceptMetrics;
 </script>

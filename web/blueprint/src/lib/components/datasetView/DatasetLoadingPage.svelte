@@ -18,7 +18,7 @@
   import {getNavigationContext} from '$lib/stores/navigationStore';
   import {datasetLink} from '$lib/utils';
   import {getHighlightedFields, getMediaFields} from '$lib/view_utils';
-  import {L, ROWID, valueAtPath, type DatasetSettings} from '$lilac';
+  import {L, ROWID, valueAtPath, type DatasetSettings} from '$osmanthus';
   import {Button, ProgressBar, ToastNotification} from 'carbon-components-svelte';
   import type {ProgressBarProps} from 'carbon-components-svelte/types/ProgressBar/ProgressBar.svelte';
   import {ArrowUpRight} from 'carbon-icons-svelte';

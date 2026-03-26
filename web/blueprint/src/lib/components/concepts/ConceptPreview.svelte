@@ -10,7 +10,7 @@
     type Example,
     type LilacValueNode,
     type Path
-  } from '$lilac';
+  } from '$osmanthus';
   import {Button, Select, SelectItem, SkeletonText, TextArea} from 'carbon-components-svelte';
   import {onMount} from 'svelte';
   import StringSpanHighlight from '../datasetView/StringSpanHighlight.svelte';

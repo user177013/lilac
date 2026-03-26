@@ -91,7 +91,7 @@
 </script>
 
 <script lang="ts">
-  import type {Path, Signal} from '$lilac';
+  import type {Path, Signal} from '$osmanthus';
   import CommandConcepts from './CommandConcepts.svelte';
   import CommandCreateConcept from './CommandCreateConcept.svelte';
   import CommandFilter from './CommandFilter.svelte';

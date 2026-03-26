@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {DatasetSettings} from '$lilac';
+  import type {DatasetSettings} from '$osmanthus';
   import {Keyboard, Tag} from 'carbon-icons-svelte';
   import {hoverTooltip} from '../common/HoverTooltip';
 
@@ -58,7 +58,7 @@
           <td class="flex h-8 w-16 flex-row items-center gap-x-1">
             <button
               class="flex h-full w-16 items-center rounded border border-gray-300 p-1"
-              class:bg-blue-300={i === activeSetLabelIndex}
+              class:bg-osmanthus-teal={i === activeSetLabelIndex}
               use:hoverTooltip={{text: 'Set keyboard shortcut'}}
               on:click={() => {
                 activeSetLabelIndex = i;

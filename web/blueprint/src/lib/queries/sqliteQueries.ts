@@ -1,4 +1,4 @@
-import {SqliteService} from '$lilac';
+import {SqliteService} from '$osmanthus';
 import {createApiQuery} from './queryUtils';
 
 const SQLITE_TAG = 'sqlite';

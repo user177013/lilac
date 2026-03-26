@@ -21,7 +21,7 @@
     serializePath,
     type Path,
     type PivotResult
-  } from '$lilac';
+  } from '$osmanthus';
   import {SkeletonText} from 'carbon-components-svelte';
   import type {
     DropdownItem,
@@ -278,6 +278,6 @@
 
 <style lang="postcss">
   .search-box:focus-within {
-    @apply outline outline-1 outline-blue-500;
+    @apply outline outline-1 outline-osmanthus-gold;
   }
 </style>

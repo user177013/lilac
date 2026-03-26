@@ -1,7 +1,7 @@
 <script lang="ts">
   import {queryDatasetSchema, querySelectRowsSchema} from '$lib/queries/datasetQueries';
   import {getDatasetViewContext, getSelectRowsSchemaOptions} from '$lib/stores/datasetViewStore';
-  import {childFields, getField, pathIsEqual, type Filter, type LilacField, type Op} from '$lilac';
+  import {childFields, getField, pathIsEqual, type Filter, type LilacField, type Op} from '$osmanthus';
   import {
     Checkbox,
     ComposedModal,
@@ -144,7 +144,7 @@
           {/each}
           <div>
             <button
-              class="uppercase text-blue-500 hover:underline"
+              class="uppercase text-osmanthus-gold hover:underline"
               on:click={() =>
                 (stagedFilters = [
                   ...stagedFilters,

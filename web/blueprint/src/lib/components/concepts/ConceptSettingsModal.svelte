@@ -109,7 +109,7 @@
                 </div>
                 <div class="text-xs font-light">
                   Setting the concept to publicly visible will allow any user with access to this
-                  Lilac instance to view this concept.
+                  Osmanthus instance to view this concept.
                 </div>
               </section>
             </div>

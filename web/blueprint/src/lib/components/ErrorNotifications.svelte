@@ -3,7 +3,7 @@
   import {ToastNotification} from 'carbon-components-svelte';
 
   import {queryServerStatus} from '$lib/queries/serverQueries';
-  import type {ApiError} from '$lilac';
+  import type {ApiError} from '$osmanthus';
   import ApiErrorModal from './ApiErrorModal.svelte';
 
   let showError: ApiError | undefined = undefined;

@@ -1,4 +1,4 @@
-import type {Path} from '$lilac';
+import type {Path} from '$osmanthus';
 import {getContext, hasContext, setContext} from 'svelte';
 import {writable} from 'svelte/store';
 

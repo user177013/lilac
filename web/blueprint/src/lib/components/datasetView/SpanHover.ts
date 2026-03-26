@@ -1,4 +1,4 @@
-import {deserializePath, pathIsEqual} from '$lilac';
+import {deserializePath, pathIsEqual} from '$osmanthus';
 import type {SvelteComponent} from 'svelte';
 import SpanHoverTooltip, {type SpanHoverNamedValue} from './SpanHoverTooltip.svelte';
 

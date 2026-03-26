@@ -20,7 +20,7 @@ dist/
 /data
 demo_data/
 datasets/
-models/gguf/*.gguf
+models/
 # Artifacts from integration test data.
 test_data/
 
@@ -38,5 +38,5 @@ tsconfig.tsbuildinfo
 .cache/
 
 # User configurations and local logs
-lilac.yml
+osmanthus.yml
 test_logs.txt

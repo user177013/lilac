@@ -93,7 +93,7 @@
   </div>
 
   <div class="flex h-full w-full overflow-x-hidden overflow-y-scroll">
-    <div class="lilac-page flex w-full">
+    <div class="osmanthus-page flex w-full">
       {#if namespace != null && conceptName != null}
         {#if $concept?.isLoading}
           <SkeletonText />

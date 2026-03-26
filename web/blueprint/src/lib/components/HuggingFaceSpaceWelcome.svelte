@@ -9,7 +9,7 @@
   import {hoverTooltip} from './common/HoverTooltip';
 
   const tryDataset = {
-    namespace: 'lilac',
+    namespace: 'osmanthus',
     name: 'OpenOrca',
     displayName: 'OpenOrca',
     originalLink: 'https://huggingface.co/datasets/Open-Orca/OpenOrca'
@@ -28,7 +28,7 @@
 
 <div class="flex w-full flex-col items-center gap-y-6 px-8">
   <div class="mt-8 w-full text-center">
-    <h2>Welcome to Lilac</h2>
+    <h2>Welcome to Osmanthus</h2>
     <div class="mt-2 text-base text-gray-700">Better data, better AI</div>
     <div class="mt-2 text-sm text-gray-700">
       <a target="_blank" href="https://lilacml.com">visit our website</a>
@@ -51,7 +51,7 @@
         class="-ml-2"
         use:hoverTooltip={{
           text:
-            'See Lilac documentation on duplicating the HuggingFace space  ' +
+            'See Osmanthus documentation on duplicating the HuggingFace space  ' +
             'so you can manage your own instance.'
         }}
         href="https://docs.lilacml.com/deployment/huggingface_spaces.html"><Help /></a
@@ -62,12 +62,12 @@
     <SkeletonText />
   {:else if hasTryDataset}
     <WelcomeBanner
-      backgroundColorClass="bg-violet-300 hover:bg-violet-400"
+      backgroundColorClass="bg-osmanthus-teal hover:bg-osmanthus-teal"
       link={tryLink}
       title={`Browse the ${tryDataset.name} dataset`}
     >
       <p class="text-sm">
-        Try the Lilac dataset viewer on the the pre-loaded <a
+        Try the Osmanthus dataset viewer on the the pre-loaded <a
           target="_blank"
           href={tryDataset.originalLink}>{tryDataset.displayName}</a
         > dataset.
@@ -76,22 +76,22 @@
   {/if}
 
   <WelcomeBanner
-    backgroundColorClass="bg-violet-100 hover:bg-violet-200"
-    link={'https://docs.lilacml.com/blog/introducing-lilac.html'}
+    backgroundColorClass="bg-osmanthus-apricot hover:bg-osmanthus-apricot"
+    link={'https://docs.lilacml.com/blog/introducing-osmanthus.html'}
     title={`Read our Announcement Blog`}
   >
     <p class="text-sm">
-      Read about how to get started and learn more about how to use Lilac for your data.
+      Read about how to get started and learn more about how to use Osmanthus for your data.
     </p>
   </WelcomeBanner>
 
   <WelcomeBanner
-    backgroundColorClass="bg-violet-100 hover:bg-violet-200"
+    backgroundColorClass="bg-osmanthus-apricot hover:bg-osmanthus-apricot"
     link={'https://docs.lilacml.com/'}
     title={`Documentation`}
   >
     <p class="text-sm">
-      Find detailed documentation about how to install Lilac on your own machine, how to import your
+      Find detailed documentation about how to install Osmanthus on your own machine, how to import your
       own data, and create your own concepts.
     </p>
   </WelcomeBanner>

@@ -2,7 +2,7 @@
   import {queryDatasetSchema, querySelectRowsSchema} from '$lib/queries/datasetQueries';
   import {getDatasetViewContext, getSelectRowsSchemaOptions} from '$lib/stores/datasetViewStore';
   import {getDisplayPath} from '$lib/view_utils';
-  import type {KeywordSearch, MetadataSearch, Search, SearchType, SemanticSearch} from '$lilac';
+  import type {KeywordSearch, MetadataSearch, Search, SearchType, SemanticSearch} from '$osmanthus';
   import type {Tag} from 'carbon-components-svelte';
   import {hoverTooltip} from '../common/HoverTooltip';
   import RemovableTag from '../common/RemovableTag.svelte';

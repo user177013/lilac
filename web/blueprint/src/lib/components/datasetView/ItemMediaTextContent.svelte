@@ -33,7 +33,7 @@
     type Path,
     type SemanticSimilaritySignal,
     type SubstringSignal
-  } from '$lilac';
+  } from '$osmanthus';
   import {
     ComposedModal,
     ModalBody,
@@ -388,7 +388,7 @@
     if (concepts != null) {
       conceptsInMenu = new Set<string>();
       for (const concept of concepts) {
-        if (concept.namespace == 'lilac') continue;
+        if (concept.namespace == 'osmanthus') continue;
         conceptsInMenu.add(conceptIdentifier(concept.namespace, concept.name));
       }
       for (const search of searches || []) {
@@ -553,17 +553,17 @@
         if (renderSpan.isConceptSearch || renderSpan.isSemanticSearch) {
           const score = renderSpan.value as number;
           if (score < 0.55) {
-            bgScoreClass = 'bg-blue-50';
+            bgScoreClass = 'bg-osmanthus-floral';
           } else if (score < 0.6) {
-            bgScoreClass = 'bg-blue-100';
+            bgScoreClass = 'bg-osmanthus-apricot';
           } else if (score < 0.7) {
-            bgScoreClass = 'bg-blue-200';
+            bgScoreClass = 'bg-osmanthus-apricot';
           } else if (score < 0.8) {
-            bgScoreClass = 'bg-blue-300';
+            bgScoreClass = 'bg-osmanthus-teal';
           } else if (score < 0.9) {
-            bgScoreClass = 'bg-blue-400';
+            bgScoreClass = 'bg-osmanthus-gold';
           } else {
-            bgScoreClass = 'bg-blue-500';
+            bgScoreClass = 'bg-osmanthus-gold';
           }
         }
 
@@ -595,7 +595,7 @@
               isWholeLine: false,
               minimap: {
                 position: monaco.editor.MinimapPosition.Inline,
-                color: '#dbeafe' // bg-blue-200 from tailwind
+                color: '#dbeafe' // bg-osmanthus-apricot from tailwind
               }
             }
           });
@@ -611,7 +611,7 @@
               isWholeLine: false,
               minimap: {
                 position: monaco.editor.MinimapPosition.Inline,
-                color: '#dbeafe' // bg-blue-200 from tailwind
+                color: '#dbeafe' // bg-osmanthus-apricot from tailwind
               }
             }
           });
@@ -850,7 +850,7 @@
     @apply border-r-8 border-amber-900 opacity-20;
   }
   :global(.keyword-search-text) {
-    @apply font-extrabold text-violet-500 underline;
+    @apply font-extrabold text-osmanthus-gold underline;
   }
 
   /** Concept and semantic search */
@@ -869,7 +869,7 @@
     @apply border-r-8 border-orange-700 opacity-20;
   }
   :global(.leaf-text) {
-    @apply text-violet-500;
+    @apply text-osmanthus-gold;
   }
 
   /** Deep-linked selection */

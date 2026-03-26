@@ -1,4 +1,4 @@
-import {LangsmithService} from '$lilac';
+import {LangsmithService} from '$osmanthus';
 import {createApiQuery} from './queryUtils';
 
 const LANGSMITH_TAG = 'langsmith';

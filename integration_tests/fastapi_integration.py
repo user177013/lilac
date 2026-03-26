@@ -1,5 +1,5 @@
 """Integration tests where the FastAPI app is mounted."""
-import lilac.server
+import osmanthus.server
 from fastapi import FastAPI
 
 app = FastAPI()

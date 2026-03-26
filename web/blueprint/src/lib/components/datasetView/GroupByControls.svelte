@@ -2,7 +2,7 @@
   import {queryDatasetSchema} from '$lib/queries/datasetQueries';
   import {getDatasetViewContext} from '$lib/stores/datasetViewStore';
   import {getDisplayPath, shortPath} from '$lib/view_utils';
-  import {childFields, isNumeric, serializePath, type LilacField} from '$lilac';
+  import {childFields, isNumeric, serializePath, type LilacField} from '$osmanthus';
   import type {
     DropdownItem,
     DropdownItemId

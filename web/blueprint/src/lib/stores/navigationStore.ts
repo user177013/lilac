@@ -1,4 +1,4 @@
-import {isMobile} from '$lilac';
+import {isMobile} from '$osmanthus';
 import {getContext, hasContext, setContext} from 'svelte';
 import {writable} from 'svelte/store';
 export const NAV_STORE_KEY = 'nav';

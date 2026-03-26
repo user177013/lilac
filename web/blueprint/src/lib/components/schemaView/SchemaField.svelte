@@ -24,7 +24,7 @@
     type LilacField,
     type LilacSchema,
     type MetadataSearch
-  } from '$lilac';
+  } from '$osmanthus';
   import {Tag} from 'carbon-components-svelte';
   import {
     ArrowUpRight,
@@ -179,16 +179,16 @@
 <div class="border-gray-300" class:border-b={isSourceField}>
   <div
     class="flex w-full flex-row items-center gap-x-2 border-gray-300 px-4 hover:bg-gray-100"
-    class:bg-blue-50={isSignal || isCluster}
+    class:bg-osmanthus-floral={isSignal || isCluster}
     class:bg-emerald-100={isPreview}
     class:bg-orange-50={isMap && !isCluster}
     class:b={isLabel}
-    class:hover:bg-blue-100={isSignal}
+    class:hover:bg-osmanthus-apricot={isSignal}
   >
     <div
-      class="rounded-md bg-blue-200 p-0.5"
+      class="rounded-md bg-osmanthus-apricot p-0.5"
       style:margin-left={indent * 1.5 + 'rem'}
-      class:bg-blue-200={isSignal}
+      class:bg-osmanthus-apricot={isSignal}
       use:hoverTooltip={{text: tooltip}}
     >
       {#if field.dtype && field.dtype.type !== 'map'}

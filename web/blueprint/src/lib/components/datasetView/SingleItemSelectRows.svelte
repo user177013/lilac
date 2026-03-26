@@ -9,7 +9,7 @@
     getSelectRowsOptions,
     getSelectRowsSchemaOptions
   } from '$lib/stores/datasetViewStore';
-  import {L, ROWID, type SelectRowsResponse} from '$lilac';
+  import {L, ROWID, type SelectRowsResponse} from '$osmanthus';
   export let limit: number;
   export let offset: number | undefined = undefined;
   export let rowsResponse: SelectRowsResponse | undefined = undefined;

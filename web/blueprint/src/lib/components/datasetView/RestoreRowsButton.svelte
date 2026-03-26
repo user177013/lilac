@@ -2,7 +2,7 @@
   import {restoreRowsMutation} from '$lib/queries/datasetQueries';
   import {queryAuthInfo} from '$lib/queries/serverQueries';
   import {getDatasetViewContext} from '$lib/stores/datasetViewStore';
-  import type {DeleteRowsOptions} from '$lilac';
+  import type {DeleteRowsOptions} from '$osmanthus';
   import {Modal} from 'carbon-components-svelte';
   import {Undo} from 'carbon-icons-svelte';
   import {createEventDispatcher} from 'svelte';

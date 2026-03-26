@@ -26,7 +26,7 @@
     queryFormatSelectors
   } from '$lib/queries/datasetQueries';
   import {queryAuthInfo} from '$lib/queries/serverQueries';
-  import {serializePath, type Path} from '$lilac';
+  import {serializePath, type Path} from '$osmanthus';
   import {
     ComposedModal,
     ModalBody,
@@ -152,12 +152,9 @@
           />
         </div>
         <div>
-          <div class="label mb-2 font-medium text-gray-700">Use Garden</div>
+          <div class="label mb-2 font-medium text-gray-700">Use Remote Compute</div>
           <div class="label text-sm text-gray-700">
-            Accelerate computation by running remotely on <a
-              href="https://lilacml.com/#garden"
-              target="_blank">Lilac Garden</a
-            >
+            Accelerate computation by running remotely.
           </div>
           <Toggle
             disabled={!canComputeRemotely}
@@ -168,10 +165,7 @@
           />
           {#if !canComputeRemotely}
             <div>
-              <a href="https://forms.gle/Gz9cpeKJccNar5Lq8" target="_blank">
-                Sign up for Lilac Garden
-              </a>
-              to enable this feature.
+              Remote compute is not available in this environment.
             </div>
           {/if}
         </div>

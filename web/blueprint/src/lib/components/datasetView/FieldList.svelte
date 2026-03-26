@@ -7,7 +7,7 @@
     pathIsEqual,
     serializePath,
     type LilacField
-  } from '$lilac';
+  } from '$osmanthus';
   import {Checkbox} from 'carbon-components-svelte';
   import {createEventDispatcher} from 'svelte';
 
@@ -42,7 +42,7 @@
     <div class="flex w-10">
       <div
         class="inline-flex items-center rounded-md p-0.5"
-        class:bg-blue-200={isSignal}
+        class:bg-osmanthus-apricot={isSignal}
         class:bg-teal-100={isLabel}
       >
         {#if field.dtype && field.dtype.type !== 'map'}
