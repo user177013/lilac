@@ -9,10 +9,28 @@
     getSelectRowsOptions,
     getSelectRowsSchemaOptions
   } from '$lib/stores/datasetViewStore';
-  import {getDisplayPath} from '$lib/view_utils';
-  import {childFields, L, ROWID, valueAtPath} from '$osmanthus';
-  import {DataTable, InlineNotification, SkeletonText} from 'carbon-components-svelte';
+  import {getDisplayPath, getHighlightedFields} from '$lib/view_utils';
+  import {
+    childFields,
+    getField,
+    L,
+    pathIncludes,
+    ROWID,
+    serializePath,
+    valueAtPath,
+    type LilacField,
+    type Path
+  } from '$osmanthus';
+  import {
+    DataTable,
+    InlineNotification,
+    SkeletonText
+  } from 'carbon-components-svelte';
+  import {ChevronDown, ChevronRight} from 'carbon-icons-svelte';
   import InfiniteScroll from 'svelte-infinite-scroll';
+
+  import DatasetControls from './DatasetControls.svelte';
+  import DatasetTableCell from './DatasetTableCell.svelte';
 
   const datasetViewStore = getDatasetViewContext();
 
@@ -28,9 +46,11 @@
   $: rowsQuery = infiniteQuerySelectRows(
     $datasetViewStore.namespace,
     $datasetViewStore.datasetName,
-    {...selectOptions, columns: ['*']},
+    {...selectOptions, combine_columns: true},
     $selectRowsSchema?.isSuccess ? $selectRowsSchema.data.schema : undefined
   );
+  
+  $: highlightedFields = getHighlightedFields($datasetViewStore.query, $selectRowsSchema.data);
 
   $: totalNumRows = $rowsQuery.data?.pages[0].total_num_rows;
 
@@ -41,13 +61,19 @@
         .filter(f => f.dtype != null) // Only leaf fields
         .filter(f => {
           const pathStr = f.path.join('.').toLowerCase();
-          // Exclude metadata, signal results, and enrichments
+          
+          // Check if this field is part of an active search
+          const isActiveSearch = ($datasetViewStore.query.searches || []).some(s => 
+            pathIncludes(f.path, s.path)
+          );
+
+          // Exclude metadata, signal results, and enrichments (unless they are active searches)
           const isMetadata = (
             pathStr.includes('cluster') ||
             pathStr.includes('embed') ||
             pathStr.includes('pii') ||
-            pathStr.includes('signal') ||
-            pathStr.includes('computed') ||
+            (pathStr.includes('signal') && !isActiveSearch) ||
+            (pathStr.includes('computed') && !isActiveSearch) ||
             pathStr.includes('__hfsplit__') ||
             pathStr.includes('__timestamp__') ||
             pathStr.includes('concept') ||
@@ -104,10 +130,18 @@
     }
     expandedCells = expandedCells; // trigger update
   }
+
+  function cellToPath(cellKey: string): Path {
+    return (JSON.parse(cellKey) as Path).map(p => p.toString().replace(/\[(\d+)\]/g, '$1'));
+  }
+
   let scrollContainer: HTMLDivElement;
 </script>
 
 <div class="flex h-full w-full flex-col overflow-hidden px-4 pt-4 pb-8">
+  <div class="mb-4 flex-shrink-0">
+    <DatasetControls numRowsInQuery={totalNumRows} />
+  </div>
   {#if $rowsQuery.isError}
     <div class="p-4">
       <InlineNotification
@@ -134,14 +168,19 @@
           </div>
         </svelte:fragment>
         <svelte:fragment slot="cell" let:cell let:row>
+          {@const path = cellToPath(cell.key)}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div 
             class="cell-content whitespace-pre-wrap py-2 text-sm leading-relaxed cursor-pointer" 
             class:expanded={expandedCells.has(`${row.id}-${cell.key}`)}
-            title={cell.value}
             on:click|stopPropagation={() => toggleExpand(row.id, cell.key)}
           >
-            {cell.value}
+            <DatasetTableCell
+              value={cell.value}
+              row={flatRows[row.id]}
+              field={getField($selectRowsSchema.data?.schema, path)}
+              {highlightedFields}
+            />
           </div>
         </svelte:fragment>
       </DataTable>
