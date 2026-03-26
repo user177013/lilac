@@ -11,4 +11,3 @@ export type SelectGroupsResult = {
     counts: Array<any[]>;
     bins?: (Array<any[]> | null);
 };
-

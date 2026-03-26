@@ -15,4 +15,3 @@ export type AuthenticationInfo = {
     auth_enabled: boolean;
     huggingface_space_id?: (string | null);
 };
-

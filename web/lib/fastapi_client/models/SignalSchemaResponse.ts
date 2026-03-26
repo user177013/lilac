@@ -11,4 +11,3 @@ import type { Field } from './Field';
 export type SignalSchemaResponse = {
     fields: (Field | null);
 };
-

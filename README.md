@@ -204,6 +204,9 @@ rows = dataset.select_rows(
 print(list(rows))
 ```
 
+> [!TIP]
+> If you have multiple embedding models computed (e.g., `gte-small` and a custom GGUF model), Lilac will use your **Preferred embedding** for the search bar. You can change this in the **Dataset Settings (Cog Icon) > Fields** tab.
+
 #### Conceptual search
 
 Conceptual search is a much more controllable and powerful version of semantic search, where
@@ -266,7 +269,24 @@ dataset.add_labels(
 Labels can be exported for downstream tasks. Detailed documentation
 [here](https://docs.lilacml.com/datasets/dataset_labels.html).
 
+
+### 🦙 Llama.cpp BYOM Embeddings
+Lilac now supports "Bring Your Own Model" (BYOM) for Llama.cpp. You can use any GGUF embedding model by placing it in `models/gguf/` within your project directory. 
+
+Lilac automatically scans this directory and registers each model as a unique signal in the UI. You can configure model-specific settings (like `n_ctx` or `n_gpu_layers`) in the automatically generated `.config.yaml` file that appears next to your model after the first scan.
+
+```sh
+# Example folder structure:
+my_project/
+├── models/
+│   └── gguf/
+│       ├── gemma-embedding.gguf
+│       └── gemma-embedding.config.yaml  # Auto-generated
+└── ...
+```
+
 ## 💬 Contact
+
 
 For bugs and feature requests, please
 [file an issue on GitHub](https://github.com/lilacai/lilac/issues).

@@ -19,4 +19,3 @@ export type Column = {
     alias?: (string | null);
     signal_udf?: (ConceptSignal | ConceptLabelsSignal | SubstringSignal | SemanticSimilaritySignal | TextEmbeddingSignal | TextSignal | Signal | null);
 };
-

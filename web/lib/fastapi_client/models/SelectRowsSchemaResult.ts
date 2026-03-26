@@ -17,4 +17,3 @@ export type SelectRowsSchemaResult = {
     search_results?: Array<SearchResultInfo>;
     sorts?: (Array<SortResult> | null);
 };
-

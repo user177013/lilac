@@ -19,4 +19,3 @@ export type TaskInfo = {
     total_len?: (number | null);
     total_progress?: (number | null);
 };
-

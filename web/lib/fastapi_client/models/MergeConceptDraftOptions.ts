@@ -9,4 +9,3 @@
 export type MergeConceptDraftOptions = {
     draft: string;
 };
-

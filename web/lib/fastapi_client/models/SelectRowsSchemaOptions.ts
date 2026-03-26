@@ -20,4 +20,3 @@ export type SelectRowsSchemaOptions = {
     sort_order?: (SortOrder | null);
     combine_columns?: (boolean | null);
 };
-

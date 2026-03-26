@@ -12,4 +12,3 @@ export type ScoreBody = {
     examples: Array<ScoreExample>;
     draft?: string;
 };
-

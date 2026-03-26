@@ -9,4 +9,3 @@
 export type ConceptUserAccess = {
     delete_any_concept: boolean;
 };
-

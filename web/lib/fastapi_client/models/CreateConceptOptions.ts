@@ -15,4 +15,3 @@ export type CreateConceptOptions = {
     type: ConceptType;
     metadata?: (ConceptMetadata | null);
 };
-

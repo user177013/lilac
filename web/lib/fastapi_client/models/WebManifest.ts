@@ -11,4 +11,3 @@ import type { DatasetManifest } from './DatasetManifest';
 export type WebManifest = {
     dataset_manifest: DatasetManifest;
 };
-

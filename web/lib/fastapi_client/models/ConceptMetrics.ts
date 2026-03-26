@@ -15,4 +15,3 @@ export type ConceptMetrics = {
     roc_auc: number;
     overall: OverallScore;
 };
-

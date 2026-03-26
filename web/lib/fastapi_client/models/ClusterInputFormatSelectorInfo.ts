@@ -10,4 +10,3 @@ export type ClusterInputFormatSelectorInfo = {
     format: string;
     selector: string;
 };
-

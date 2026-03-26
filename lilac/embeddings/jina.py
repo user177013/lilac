@@ -1,7 +1,7 @@
 """Jina embeddings. Open-source, designed to run on device, with 8K context."""
 import functools
 import gc
-from typing import TYPE_CHECKING, Any, ClassVar, Iterator, Optional, cast
+from typing import TYPE_CHECKING, Any, ClassVar, Iterator, Literal, Optional, cast
 
 import modal
 
@@ -24,12 +24,14 @@ from ..signal import TextEmbeddingSignal
 _SIZE_TO_MODEL: dict[str, str] = {
   'small': 'jina-embeddings-v2-small-en',
   'base': 'jina-embeddings-v2-base-en',
+  'nano': 'jina-embeddings-v5-text-nano',
 }
 
 # Anything larger than 1 slows down the computation because a single long document will cause
 # padding to be added to all other documents in the batch.
 JINA_BATCH_SIZE = 1
-JINA_CONTEXT_SIZE = 8192
+_JINA_V2_CONTEXT_SIZE = 8192
+_JINA_V5_CONTEXT_SIZE = 32768
 
 
 @functools.cache
@@ -63,6 +65,7 @@ class JinaV2Small(TextEmbeddingSignal):
   supports_garden: ClassVar[bool] = True
 
   _size = 'small'
+  _context_size = _JINA_V2_CONTEXT_SIZE
   _model: Optional['AutoModel'] = None
 
   @override
@@ -91,7 +94,7 @@ class JinaV2Small(TextEmbeddingSignal):
 
     # SentenceTransformers can take arbitrarily large batches.
     def _embed_fn(docs: list[str]) -> list[np.ndarray]:
-      trimmed_docs = [doc[:JINA_CONTEXT_SIZE] for doc in docs]
+      trimmed_docs = [doc[: self._context_size] for doc in docs]
       vectors = cast(Any, self._model).encode(trimmed_docs)
       embeddings = []
       for vector in vectors:
@@ -111,7 +114,7 @@ class JinaV2Small(TextEmbeddingSignal):
     trimmed_docs: list[str] = []
     doc_lengths: list[int] = []
     for doc in docs:
-      trimmed_docs.append(doc[:JINA_CONTEXT_SIZE])
+      trimmed_docs.append(doc[: self._context_size])
       doc_lengths.append(len(doc))
     gzipped_docs = compress_docs(trimmed_docs)
 
@@ -139,3 +142,60 @@ class JinaV2Base(JinaV2Small):
 
   supports_garden: ClassVar[bool] = False
   _size = 'base'
+
+
+class JinaV5Nano(JinaV2Small):
+  """Jina V5 nano Embeddings with 32K context and multi-task support.
+
+  Supports 4 task-specific LoRA adapters: retrieval, text-matching, clustering,
+  and classification. Each task produces optimized embeddings for that use case.
+
+  Each document is truncated to 32K characters, and the embeddings are computed on the truncated
+  document.
+  """
+
+  name: ClassVar[str] = 'jina-v5-nano'
+  display_name: ClassVar[str] = 'Jina V5 (nano)'
+
+  supports_garden: ClassVar[bool] = False
+  _size = 'nano'
+  _context_size = _JINA_V5_CONTEXT_SIZE
+
+  # Jina v5 multi-task support.
+  # Valid tasks: 'retrieval', 'text-matching', 'clustering', 'classification'.
+  task: Literal['retrieval', 'text-matching', 'clustering', 'classification'] = 'retrieval'
+  # For 'retrieval' task, controls asymmetric encoding: 'query' or 'document'.
+  # Defaults to 'document' since Lilac indexes documents; use 'query' for search queries.
+  prompt_name: Optional[Literal['query', 'document']] = 'document'
+
+  @override
+  def compute(self, docs: list[str]) -> list[Item]:
+    """Call the Jina v5 embedding function with task-specific LoRA adapters."""
+    if self._model is None:
+      raise ValueError('The signal is not initialized. Call setup() first.')
+
+    def _embed_fn(docs: list[str]) -> list[np.ndarray]:
+      trimmed_docs = [doc[: self._context_size] for doc in docs]
+      # Jina v5 uses the task-aware encode() API with named arguments.
+      encode_kwargs: dict[str, Any] = {
+        'texts': trimmed_docs,
+        'task': self.task,
+      }
+      # Only pass prompt_name for retrieval (asymmetric) tasks.
+      if self.task == 'retrieval' and self.prompt_name:
+        encode_kwargs['prompt_name'] = self.prompt_name
+
+      vectors = cast(Any, self._model).encode(**encode_kwargs)
+      embeddings = []
+      for vector in vectors:
+        vector = np.array(vector)
+        vector /= norm(vector)
+        embeddings.append(vector)
+      return embeddings
+
+    return chunked_compute_embedding(
+      _embed_fn,
+      docs,
+      self.local_batch_size,
+    )
+

@@ -11,13 +11,13 @@ export class SqliteService {
     /**
      * Get Tables
      * List the table names in sqlite.
-     * @param dbFile
+     * @param dbFile 
      * @returns string Successful Response
      * @throws ApiError
      */
     public static getTables(
-        dbFile: string,
-    ): CancelablePromise<Array<string>> {
+dbFile: string,
+): CancelablePromise<Array<string>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/sqlite/tables',

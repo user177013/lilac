@@ -13,4 +13,3 @@ export type SignalInfo = {
     input_type: SignalInputType;
     json_schema: Record<string, any>;
 };
-

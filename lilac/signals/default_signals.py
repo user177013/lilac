@@ -2,11 +2,9 @@
 
 from ..embeddings.bge import BGEM3
 from ..embeddings.cohere import Cohere
-from ..embeddings.gte import GTEBase, GTESmall, GTETiny
-from ..embeddings.jina import JinaV2Base, JinaV2Small
-from ..embeddings.nomic_embed import NomicEmbed15, NomicEmbed15_256
+from ..embeddings.llamacpp import scan_and_register_llamacpp_models
+from ..embeddings.nomic_embed import NomicEmbedV2MoE, NomicEmbedV2MoE_256
 from ..embeddings.openai import OpenAIEmbedding
-from ..embeddings.sbert import SBERT
 from ..signal import register_signal
 from .concept_labels import ConceptLabelsSignal
 from .concept_scorer import ConceptSignal
@@ -19,7 +17,11 @@ from .text_statistics import TextStatisticsSignal
 
 
 def register_default_signals() -> None:
-  """Register all the default signals."""
+  """Register all the default signals.
+
+  Legacy models (GTE, SBERT, Jina V2, Nomic 1.5) were deprecated in favor of Nomic v2 MoE.
+  See deprecation_analysis.md for details. JinaV5Nano is blocked on transformers >= 4.57.
+  """
   # Concepts.
   register_signal(ConceptSignal, exists_ok=True)
   register_signal(ConceptLabelsSignal, exists_ok=True)
@@ -32,20 +34,14 @@ def register_default_signals() -> None:
   register_signal(LangDetectionSignal, exists_ok=True)
   register_signal(MarkdownCodeBlockSignal, exists_ok=True)
 
-  # Embeddings.
+  # Embeddings — API-based.
   register_signal(Cohere, exists_ok=True)
-
-  register_signal(SBERT, exists_ok=True)
-
   register_signal(OpenAIEmbedding, exists_ok=True)
 
-  register_signal(GTETiny, exists_ok=True)
-  register_signal(GTESmall, exists_ok=True)
-  register_signal(GTEBase, exists_ok=True)
-
-  register_signal(JinaV2Small, exists_ok=True)
-  register_signal(JinaV2Base, exists_ok=True)
-
+  # Embeddings — On-device.
   register_signal(BGEM3, exists_ok=True)
-  register_signal(NomicEmbed15, exists_ok=True)
-  register_signal(NomicEmbed15_256, exists_ok=True)
+  register_signal(NomicEmbedV2MoE, exists_ok=True)
+  register_signal(NomicEmbedV2MoE_256, exists_ok=True)
+
+  # Llama.cpp GGUF models (dynamically scanned from the models directory).
+  scan_and_register_llamacpp_models()

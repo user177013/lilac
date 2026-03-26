@@ -21,7 +21,7 @@ from .config import (
 from .data import cluster_titling
 from .data.dataset import DatasetManifest
 from .db_manager import get_dataset
-from .embeddings.jina import JinaV2Small
+from .embeddings.nomic_embed import NomicEmbedV2MoE
 from .env import set_project_dir
 from .load import load
 from .project import PROJECT_CONFIG_FILENAME, init
@@ -371,7 +371,7 @@ def test_load_twice_overwrite(tmp_path: pathlib.Path, capsys: pytest.CaptureFixt
   assert first_manifest == second_manifest
 
 
-def _mock_jina(mocker: MockerFixture) -> None:
+def _mock_embedding(mocker: MockerFixture) -> None:
   def compute(docs: list[str]) -> list[Item]:
     result = []
     for doc in docs:
@@ -383,8 +383,8 @@ def _mock_jina(mocker: MockerFixture) -> None:
         result.append([chunk_embedding(0, len(doc), np.array([0.5, 0.5, 0.5]))])
     return result
 
-  mocker.patch.object(JinaV2Small, 'compute', side_effect=compute)
-  mocker.patch.object(JinaV2Small, 'setup', return_value=None)
+  mocker.patch.object(NomicEmbedV2MoE, 'compute', side_effect=compute)
+  mocker.patch.object(NomicEmbedV2MoE, 'setup', return_value=None)
 
 
 def test_load_clusters(
@@ -408,11 +408,11 @@ def test_load_clusters(
     ],
   )
 
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
   mocker.patch.object(cluster_titling, 'generate_title_openai', return_value='title')
   mocker.patch.object(cluster_titling, 'generate_category_openai', return_value='category')
 
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
 
   # Load the project config from a config object.
   load(config=project_config)

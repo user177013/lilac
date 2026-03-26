@@ -10,4 +10,3 @@ export type EmbeddingInfo = {
     input_path?: (Array<string> | null);
     embedding: string;
 };
-

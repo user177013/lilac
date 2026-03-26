@@ -9,4 +9,3 @@
 export type SourcesList = {
     sources: Array<string>;
 };
-

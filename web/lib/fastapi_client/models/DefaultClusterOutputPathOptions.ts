@@ -9,4 +9,3 @@
 export type DefaultClusterOutputPathOptions = {
     input_path: (Array<string> | string);
 };
-

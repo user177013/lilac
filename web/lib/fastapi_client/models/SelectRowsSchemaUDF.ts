@@ -10,4 +10,3 @@ export type SelectRowsSchemaUDF = {
     path: Array<string>;
     alias?: (string | null);
 };
-

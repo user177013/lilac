@@ -26,4 +26,3 @@ export type SelectGroupsOptions = {
     limit?: (number | null);
     bins?: (Array<any[]> | null);
 };
-

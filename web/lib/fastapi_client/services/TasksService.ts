@@ -26,13 +26,13 @@ export class TasksService {
     /**
      * Cancel Task
      * Cancel a task.
-     * @param taskId
+     * @param taskId 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static cancelTask(
-        taskId: string,
-    ): CancelablePromise<any> {
+taskId: string,
+): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/tasks/{task_id}/cancel',

@@ -14,4 +14,3 @@ export type SortResult = {
     alias?: (string | null);
     search_index?: (number | null);
 };
-

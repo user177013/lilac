@@ -16,4 +16,3 @@ export type Example = {
     draft?: (string | null);
     id: string;
 };
-

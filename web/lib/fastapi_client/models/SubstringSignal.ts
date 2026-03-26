@@ -11,4 +11,3 @@ export type SubstringSignal = {
     supports_garden?: any;
     query: string;
 };
-

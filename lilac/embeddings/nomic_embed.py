@@ -20,7 +20,8 @@ from .embedding import chunked_compute_embedding, identity_chunker
 from .transformer_utils import SENTENCE_TRANSFORMER_BATCH_SIZE, setup_model_device
 
 # See https://huggingface.co/spaces/mteb/leaderboard for leaderboard of models.
-NOMIC_EMBED = 'nomic-ai/nomic-embed-text-v1.5'
+NOMIC_EMBED_15 = 'nomic-ai/nomic-embed-text-v1.5'
+NOMIC_EMBED_V2_MOE = 'nomic-ai/nomic-embed-text-v2-moe'
 
 
 @functools.cache
@@ -49,7 +50,7 @@ class NomicEmbed15(TextEmbeddingSignal):
   local_strategy: ClassVar[TaskExecutionType] = 'threads'
   supports_garden: ClassVar[bool] = False
 
-  _model_name = NOMIC_EMBED
+  _model_name = NOMIC_EMBED_15
   _model: 'SentenceTransformer'
   _matryoshka_dim = 768
 
@@ -110,4 +111,29 @@ class NomicEmbed15_256(NomicEmbed15):
 
   name: ClassVar[str] = 'nomic-embed-1.5-256'
   display_name: ClassVar[str] = 'Nomic Embeddings 1.5 256'
+  _matryoshka_dim = 256
+
+
+class NomicEmbedV2MoE(NomicEmbed15):
+  """Computes Nomic Embeddings v2 MoE (768 dimensions).
+  
+  <br>This embedding runs on-device. See the [model card](https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe)
+  for details.
+  """
+
+  name: ClassVar[str] = 'nomic-embed-v2-moe-768'
+  display_name: ClassVar[str] = 'Nomic Embeddings v2 MoE 768'
+  _model_name = NOMIC_EMBED_V2_MOE
+  _matryoshka_dim = 768
+
+
+class NomicEmbedV2MoE_256(NomicEmbedV2MoE):
+  """Computes Nomic Embeddings v2 MoE (256 dimensions).
+
+  <br>This embedding runs on-device. See the [model card](https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe)
+  for details.
+  """
+
+  name: ClassVar[str] = 'nomic-embed-v2-moe-256'
+  display_name: ClassVar[str] = 'Nomic Embeddings v2 MoE 256'
   _matryoshka_dim = 256

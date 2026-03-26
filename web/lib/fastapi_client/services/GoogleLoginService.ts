@@ -11,13 +11,13 @@ export class GoogleLoginService {
     /**
      * Login
      * Redirects to Google OAuth login page.
-     * @param originUrl
+     * @param originUrl 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static login(
-        originUrl: string,
-    ): CancelablePromise<any> {
+originUrl: string,
+): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/google/login',

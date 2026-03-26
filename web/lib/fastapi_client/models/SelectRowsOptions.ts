@@ -29,4 +29,3 @@ export type SelectRowsOptions = {
     include_deleted?: boolean;
     exclude_signals?: boolean;
 };
-

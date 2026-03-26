@@ -12,4 +12,3 @@ export type DatasetUISettings = {
     view_type?: 'scroll' | 'single_item';
     label_to_keycode?: Record<string, string>;
 };
-

@@ -1,6 +1,7 @@
 """Generate a web client from the OpenAPI spec."""
 import os
 import subprocess
+import tempfile
 
 import click
 
@@ -22,25 +23,19 @@ def main(api_json_from_server: bool) -> None:
   if api_json_from_server:
     openapi_input = 'http://127.0.0.1:5432/openapi.json'
   else:
-    openapi_input = '/tmp/openapi.json'
+    openapi_input = os.path.join(tempfile.gettempdir(), 'openapi.json')
     # Call the make_openapi script to generate the openapi.json file.
-    run(f'poetry run python -m lilac.make_openapi --output={openapi_input}')
+    run(f'poetry run python -m lilac.make_openapi --output="{openapi_input}"')
 
   # Generate the web client.
-  run(
-    f"""
-    pushd web/lib/ > /dev/null && \
-    npx openapi --input {openapi_input} --output {output} --useUnionTypes && \
-    popd > /dev/null
-  """
-  )
+  run(f'npx openapi --input "{openapi_input}" --output "{output}" --useUnionTypes', cwd='web/lib')
 
   print(f'[make_fastapi_client] Web client written to {output}')
 
 
-def run(cmd: str) -> subprocess.CompletedProcess[bytes]:
+def run(cmd: str, cwd: str | None = None) -> subprocess.CompletedProcess[bytes]:
   """Run a command and return the result."""
-  return subprocess.run(cmd, shell=True, check=True)
+  return subprocess.run(cmd, shell=True, check=True, cwd=cwd)
 
 
 if __name__ == '__main__':

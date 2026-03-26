@@ -9,4 +9,3 @@
 export type DeleteSignalOptions = {
     signal_path: (Array<string> | string);
 };
-

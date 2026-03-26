@@ -18,4 +18,3 @@ export type Concept = {
     version?: number;
     metadata?: (ConceptMetadata | null);
 };
-

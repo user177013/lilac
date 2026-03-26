@@ -21,4 +21,3 @@ export type RemoveLabelsOptions = {
     searches?: Array<(ConceptSearch | SemanticSearch | KeywordSearch | MetadataSearch)>;
     filters?: Array<(BinaryFilter | StringFilter | UnaryFilter | ListFilter)>;
 };
-

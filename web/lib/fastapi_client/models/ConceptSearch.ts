@@ -13,4 +13,3 @@ export type ConceptSearch = {
     embedding: string;
     type: 'concept';
 };
-

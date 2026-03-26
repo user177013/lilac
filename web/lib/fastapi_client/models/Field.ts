@@ -24,4 +24,3 @@ export type Field = {
     cluster?: (ClusterInfo | null);
     embedding?: (EmbeddingInfo | null);
 };
-

@@ -43,13 +43,13 @@ export class SignalsService {
     /**
      * Compute
      * Compute a signal over a set of inputs.
-     * @param requestBody
+     * @param requestBody 
      * @returns SignalComputeResponse Successful Response
      * @throws ApiError
      */
     public static compute(
-        requestBody: SignalComputeOptions,
-    ): CancelablePromise<SignalComputeResponse> {
+requestBody: SignalComputeOptions,
+): CancelablePromise<SignalComputeResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/signals/compute',
@@ -64,13 +64,13 @@ export class SignalsService {
     /**
      * Schema
      * Get the schema for a signal.
-     * @param requestBody
+     * @param requestBody 
      * @returns SignalSchemaResponse Successful Response
      * @throws ApiError
      */
     public static schema(
-        requestBody: SignalSchemaOptions,
-    ): CancelablePromise<SignalSchemaResponse> {
+requestBody: SignalSchemaOptions,
+): CancelablePromise<SignalSchemaResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/signals/schema',

@@ -11,4 +11,3 @@ export type StringFilter = {
     op: 'length_longer' | 'length_shorter' | 'ilike' | 'regex_matches' | 'not_regex_matches';
     value: string;
 };
-

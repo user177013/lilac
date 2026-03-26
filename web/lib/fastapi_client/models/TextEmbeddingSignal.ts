@@ -14,4 +14,3 @@ export type TextEmbeddingSignal = {
      */
     embed_input_type?: 'question' | 'document';
 };
-

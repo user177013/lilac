@@ -14,4 +14,3 @@ export type ConceptUpdate = {
     update?: (Array<Example> | null);
     remove?: (Array<string> | null);
 };
-

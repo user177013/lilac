@@ -19,6 +19,8 @@ dist/
 # Data to ignore.
 /data
 demo_data/
+datasets/
+models/gguf/*.gguf
 # Artifacts from integration test data.
 test_data/
 
@@ -33,3 +35,8 @@ data/concept/**/*.pkl
 tsconfig.tsbuildinfo
 
 .tmp/
+.cache/
+
+# User configurations and local logs
+lilac.yml
+test_logs.txt

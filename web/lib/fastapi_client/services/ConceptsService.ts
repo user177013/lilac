@@ -33,17 +33,17 @@ export class ConceptsService {
     /**
      * Get Concept
      * Get a concept from a database.
-     * @param namespace
-     * @param conceptName
-     * @param draft
+     * @param namespace 
+     * @param conceptName 
+     * @param draft 
      * @returns Concept Successful Response
      * @throws ApiError
      */
     public static getConcept(
-        namespace: string,
-        conceptName: string,
-        draft?: (string | null),
-    ): CancelablePromise<Concept> {
+namespace: string,
+conceptName: string,
+draft?: (string | null),
+): CancelablePromise<Concept> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/concepts/{namespace}/{concept_name}',
@@ -63,17 +63,17 @@ export class ConceptsService {
     /**
      * Edit Concept
      * Edit a concept in the database.
-     * @param namespace
-     * @param conceptName
-     * @param requestBody
+     * @param namespace 
+     * @param conceptName 
+     * @param requestBody 
      * @returns Concept Successful Response
      * @throws ApiError
      */
     public static editConcept(
-        namespace: string,
-        conceptName: string,
-        requestBody: ConceptUpdate,
-    ): CancelablePromise<Concept> {
+namespace: string,
+conceptName: string,
+requestBody: ConceptUpdate,
+): CancelablePromise<Concept> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/concepts/{namespace}/{concept_name}',
@@ -92,15 +92,15 @@ export class ConceptsService {
     /**
      * Delete Concept
      * Deletes the concept from the database.
-     * @param namespace
-     * @param conceptName
+     * @param namespace 
+     * @param conceptName 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static deleteConcept(
-        namespace: string,
-        conceptName: string,
-    ): CancelablePromise<any> {
+namespace: string,
+conceptName: string,
+): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/concepts/{namespace}/{concept_name}',
@@ -117,13 +117,13 @@ export class ConceptsService {
     /**
      * Create Concept
      * Edit a concept in the database.
-     * @param requestBody
+     * @param requestBody 
      * @returns Concept Successful Response
      * @throws ApiError
      */
     public static createConcept(
-        requestBody: CreateConceptOptions,
-    ): CancelablePromise<Concept> {
+requestBody: CreateConceptOptions,
+): CancelablePromise<Concept> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/concepts/create',
@@ -138,17 +138,17 @@ export class ConceptsService {
     /**
      * Edit Concept Metadata
      * Edit the metadata of a concept.
-     * @param namespace
-     * @param conceptName
-     * @param requestBody
+     * @param namespace 
+     * @param conceptName 
+     * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static editConceptMetadata(
-        namespace: string,
-        conceptName: string,
-        requestBody: ConceptMetadata,
-    ): CancelablePromise<any> {
+namespace: string,
+conceptName: string,
+requestBody: ConceptMetadata,
+): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/concepts/{namespace}/{concept_name}/metadata',
@@ -167,17 +167,17 @@ export class ConceptsService {
     /**
      * Merge Concept Draft
      * Merge a draft in the concept into main.
-     * @param namespace
-     * @param conceptName
-     * @param requestBody
+     * @param namespace 
+     * @param conceptName 
+     * @param requestBody 
      * @returns Concept Successful Response
      * @throws ApiError
      */
     public static mergeConceptDraft(
-        namespace: string,
-        conceptName: string,
-        requestBody: MergeConceptDraftOptions,
-    ): CancelablePromise<Concept> {
+namespace: string,
+conceptName: string,
+requestBody: MergeConceptDraftOptions,
+): CancelablePromise<Concept> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/concepts/{namespace}/{concept_name}/merge_draft',
@@ -196,15 +196,15 @@ export class ConceptsService {
     /**
      * Get Concept Models
      * Get a concept model from a database.
-     * @param namespace
-     * @param conceptName
+     * @param namespace 
+     * @param conceptName 
      * @returns ConceptModelInfo Successful Response
      * @throws ApiError
      */
     public static getConceptModels(
-        namespace: string,
-        conceptName: string,
-    ): CancelablePromise<Array<ConceptModelInfo>> {
+namespace: string,
+conceptName: string,
+): CancelablePromise<Array<ConceptModelInfo>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/concepts/{namespace}/{concept_name}/model',
@@ -221,19 +221,19 @@ export class ConceptsService {
     /**
      * Get Concept Model
      * Get a concept model from a database.
-     * @param namespace
-     * @param conceptName
-     * @param embeddingName
-     * @param createIfNotExists
+     * @param namespace 
+     * @param conceptName 
+     * @param embeddingName 
+     * @param createIfNotExists 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static getConceptModel(
-        namespace: string,
-        conceptName: string,
-        embeddingName: string,
-        createIfNotExists: boolean = false,
-    ): CancelablePromise<(ConceptModelInfo | null)> {
+namespace: string,
+conceptName: string,
+embeddingName: string,
+createIfNotExists: boolean = false,
+): CancelablePromise<(ConceptModelInfo | null)> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/concepts/{namespace}/{concept_name}/model/{embedding_name}',
@@ -254,19 +254,19 @@ export class ConceptsService {
     /**
      * Score
      * Score examples along the specified concept.
-     * @param namespace
-     * @param conceptName
-     * @param embeddingName
-     * @param requestBody
+     * @param namespace 
+     * @param conceptName 
+     * @param embeddingName 
+     * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static score(
-        namespace: string,
-        conceptName: string,
-        embeddingName: string,
-        requestBody: ScoreBody,
-    ): CancelablePromise<Array<Array<Record<string, any>>>> {
+namespace: string,
+conceptName: string,
+embeddingName: string,
+requestBody: ScoreBody,
+): CancelablePromise<Array<Array<Record<string, any>>>> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/concepts/{namespace}/{concept_name}/model/{embedding_name}/score',
@@ -286,13 +286,13 @@ export class ConceptsService {
     /**
      * Generate Examples
      * Generate positive examples for a given concept using an LLM model.
-     * @param description
+     * @param description 
      * @returns string Successful Response
      * @throws ApiError
      */
     public static generateExamples(
-        description: string,
-    ): CancelablePromise<Array<string>> {
+description: string,
+): CancelablePromise<Array<string>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/concepts/generate_examples',

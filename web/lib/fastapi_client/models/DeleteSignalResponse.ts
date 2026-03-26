@@ -9,4 +9,3 @@
 export type DeleteSignalResponse = {
     completed: boolean;
 };
-

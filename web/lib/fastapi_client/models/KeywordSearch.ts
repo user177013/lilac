@@ -11,4 +11,3 @@ export type KeywordSearch = {
     query: string;
     type: 'keyword';
 };
-

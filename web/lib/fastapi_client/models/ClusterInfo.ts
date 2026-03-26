@@ -14,4 +14,3 @@ export type ClusterInfo = {
     input_path?: (Array<string> | null);
     input_format_selector?: (ClusterInputFormatSelectorInfo | null);
 };
-

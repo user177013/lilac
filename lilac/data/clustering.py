@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 from ..batch_utils import compress_docs, flatten_path_iter
 from ..dataset_format import DatasetFormatInputSelector
-from ..embeddings.jina import JinaV2Small
+from ..embeddings.nomic_embed import NomicEmbedV2MoE
 from ..schema import (
   EMBEDDING_KEY,
   PATH_WILDCARD,
@@ -332,16 +332,16 @@ def _hdbscan_cluster(
     task_info.total_progress = 0
     task_info.total_len = num_docs
   with DebugTimer('Computing embeddings'):
-    jina = JinaV2Small()
-    jina.setup()
+    embed_model = NomicEmbedV2MoE()
+    embed_model.setup()
     response = []
     for doc in tqdm(docs, position=0, desc='Computing embeddings', total=num_docs):
-      response.extend(jina.compute([doc]))
+      response.extend(embed_model.compute([doc]))
       if task_info and task_info.total_progress is not None:
         task_info.total_progress += 1
-    jina.teardown()
+    embed_model.teardown()
 
-  del docs, jina
+  del docs, embed_model
   all_vectors = np.array([r[0][EMBEDDING_KEY] for r in response], dtype=np.float32)
   del response
   gc.collect()

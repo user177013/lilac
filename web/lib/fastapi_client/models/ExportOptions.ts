@@ -15,4 +15,3 @@ export type ExportOptions = {
     exclude_labels?: Array<string>;
     include_signals?: boolean;
 };
-

@@ -28,13 +28,13 @@ export class DataLoadersService {
     /**
      * Get Source Schema
      * Get the fields for a source.
-     * @param sourceName
+     * @param sourceName 
      * @returns any Successful Response
      * @throws ApiError
      */
     public static getSourceSchema(
-        sourceName: string,
-    ): CancelablePromise<Record<string, any>> {
+sourceName: string,
+): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/data_loaders/{source_name}',
@@ -50,15 +50,15 @@ export class DataLoadersService {
     /**
      * Load
      * Load a dataset.
-     * @param sourceName
-     * @param requestBody
+     * @param sourceName 
+     * @param requestBody 
      * @returns LoadDatasetResponse Successful Response
      * @throws ApiError
      */
     public static load(
-        sourceName: string,
-        requestBody: LoadDatasetOptions,
-    ): CancelablePromise<LoadDatasetResponse> {
+sourceName: string,
+requestBody: LoadDatasetOptions,
+): CancelablePromise<LoadDatasetResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/data_loaders/{source_name}/load',

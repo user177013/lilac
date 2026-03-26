@@ -12,4 +12,3 @@ export type RagGenerationResult = {
     num_input_tokens: (number | null);
     num_output_tokens: (number | null);
 };
-

@@ -9,4 +9,3 @@
 export type GetStatsOptions = {
     leaf_path: (Array<string> | string);
 };
-

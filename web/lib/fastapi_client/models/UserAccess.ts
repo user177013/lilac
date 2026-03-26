@@ -15,4 +15,3 @@ export type UserAccess = {
     dataset: DatasetUserAccess;
     concept: ConceptUserAccess;
 };
-

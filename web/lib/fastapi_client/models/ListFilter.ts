@@ -11,4 +11,3 @@ export type ListFilter = {
     op: 'in';
     value: Array<string>;
 };
-

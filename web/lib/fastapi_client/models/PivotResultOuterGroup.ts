@@ -11,4 +11,3 @@ export type PivotResultOuterGroup = {
     count: number;
     inner: Array<any[]>;
 };
-

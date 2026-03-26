@@ -15,4 +15,3 @@ export type StatsResult = {
     value_samples?: Array<number>;
     avg_text_length?: (number | null);
 };
-

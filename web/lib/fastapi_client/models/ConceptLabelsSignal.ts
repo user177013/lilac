@@ -14,4 +14,3 @@ export type ConceptLabelsSignal = {
     version?: (number | null);
     draft?: string;
 };
-

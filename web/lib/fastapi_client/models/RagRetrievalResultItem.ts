@@ -15,4 +15,3 @@ export type RagRetrievalResultItem = {
     score: number;
     match_spans: Array<RagRetrievalSpan>;
 };
-

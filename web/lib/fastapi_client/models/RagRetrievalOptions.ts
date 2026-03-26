@@ -24,4 +24,3 @@ export type RagRetrievalOptions = {
     top_k?: number;
     similarity_threshold?: number;
 };
-

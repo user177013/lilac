@@ -11,4 +11,3 @@ export type UnaryFilter = {
     op: 'exists' | 'not_exists';
     value?: null;
 };
-

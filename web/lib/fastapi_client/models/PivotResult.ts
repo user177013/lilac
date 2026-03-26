@@ -12,4 +12,3 @@ export type PivotResult = {
     outer_groups: Array<PivotResultOuterGroup>;
     too_many_distinct?: boolean;
 };
-

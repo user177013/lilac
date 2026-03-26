@@ -9,4 +9,3 @@
 export type ClusterResponse = {
     task_id: string;
 };
-

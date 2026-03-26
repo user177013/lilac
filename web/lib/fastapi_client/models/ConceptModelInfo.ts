@@ -15,4 +15,3 @@ export type ConceptModelInfo = {
     version: number;
     metrics?: (ConceptMetrics | null);
 };
-

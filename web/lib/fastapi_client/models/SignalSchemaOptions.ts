@@ -11,4 +11,3 @@ import type { Signal } from './Signal';
 export type SignalSchemaOptions = {
     signal: Signal;
 };
-

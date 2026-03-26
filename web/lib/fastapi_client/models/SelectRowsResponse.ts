@@ -10,4 +10,3 @@ export type SelectRowsResponse = {
     rows: Array<Record<string, any>>;
     total_num_rows: number;
 };
-

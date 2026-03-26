@@ -10,4 +10,3 @@ export type RagRetrievalSpan = {
     start: number;
     end: number;
 };
-

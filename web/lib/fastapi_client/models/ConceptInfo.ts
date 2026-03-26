@@ -18,4 +18,3 @@ export type ConceptInfo = {
     drafts: Array<string>;
     acls: ConceptACL;
 };
-

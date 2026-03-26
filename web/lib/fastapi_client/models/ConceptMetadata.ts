@@ -11,4 +11,3 @@ export type ConceptMetadata = {
     tags?: Array<string>;
     description?: (string | null);
 };
-

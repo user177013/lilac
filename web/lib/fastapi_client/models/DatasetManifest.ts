@@ -18,4 +18,3 @@ export type DatasetManifest = {
     num_items: number;
     dataset_format?: (DatasetFormat | null);
 };
-

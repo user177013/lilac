@@ -14,4 +14,3 @@ export type MapType = {
     key_type: DataType;
     value_field: Field;
 };
-

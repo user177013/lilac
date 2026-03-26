@@ -12,4 +12,3 @@ export type TaskManifest = {
     tasks: Record<string, TaskInfo>;
     progress?: (number | null);
 };
-

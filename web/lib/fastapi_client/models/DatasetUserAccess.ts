@@ -17,4 +17,3 @@ export type DatasetUserAccess = {
     delete_rows: boolean;
     execute_remotely: boolean;
 };
-

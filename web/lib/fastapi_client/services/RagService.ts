@@ -16,13 +16,13 @@ export class RagService {
     /**
      * Retrieval
      * Get the retrieval results for a prompt.
-     * @param requestBody
+     * @param requestBody 
      * @returns RagRetrievalResultItem Successful Response
      * @throws ApiError
      */
     public static retrieval(
-        requestBody: RagRetrievalOptions,
-    ): CancelablePromise<Array<RagRetrievalResultItem>> {
+requestBody: RagRetrievalOptions,
+): CancelablePromise<Array<RagRetrievalResultItem>> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rag/retrieval',
@@ -37,13 +37,13 @@ export class RagService {
     /**
      * Generate
      * Get the retrieval results for a prompt.
-     * @param requestBody
+     * @param requestBody 
      * @returns RagGenerationResult Successful Response
      * @throws ApiError
      */
     public static generate(
-        requestBody: RagGenerationOptions,
-    ): CancelablePromise<RagGenerationResult> {
+requestBody: RagGenerationOptions,
+): CancelablePromise<RagGenerationResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/rag/generate',

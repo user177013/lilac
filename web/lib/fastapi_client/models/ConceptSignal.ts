@@ -17,4 +17,3 @@ export type ConceptSignal = {
     version?: (number | null);
     draft?: string;
 };
-

@@ -9,4 +9,3 @@
 export type ComputeSignalResponse = {
     task_id: string;
 };
-

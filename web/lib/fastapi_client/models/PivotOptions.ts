@@ -21,4 +21,3 @@ export type PivotOptions = {
     filters?: Array<(BinaryFilter | StringFilter | UnaryFilter | ListFilter)>;
     searches?: Array<(ConceptSearch | SemanticSearch | KeywordSearch | MetadataSearch)>;
 };
-

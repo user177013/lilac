@@ -16,4 +16,3 @@ export type SemanticSearch = {
      */
     query_type?: 'question' | 'document';
 };
-

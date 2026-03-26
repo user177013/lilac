@@ -14,4 +14,3 @@ export type ComputeSignalOptions = {
     overwrite?: boolean;
     use_garden?: boolean;
 };
-

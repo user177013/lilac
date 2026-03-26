@@ -11,4 +11,3 @@ export type SearchResultInfo = {
     result_path: Array<string>;
     alias?: (string | null);
 };
-

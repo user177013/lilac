@@ -20,4 +20,3 @@ export type ClusterOptions = {
     skip_noisy_assignment?: boolean;
     overwrite?: boolean;
 };
-

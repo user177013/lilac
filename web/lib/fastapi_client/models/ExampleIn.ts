@@ -15,4 +15,3 @@ export type ExampleIn = {
     origin?: (ExampleOrigin | null);
     draft?: (string | null);
 };
-

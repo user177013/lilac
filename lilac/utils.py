@@ -215,7 +215,19 @@ def delete_file(filepath: str) -> None:
     blob.delete()
     return
 
-  os.remove(filepath)
+  if os.name == 'nt':
+    # On Windows, file deletion can fail if a process (like DuckDB) has a handle open.
+    # We retry a few times with exponential backoff to handle transient locks.
+    for i in range(10):
+      try:
+        os.remove(filepath)
+        return
+      except (PermissionError, IOError):
+        if i == 9:
+          raise
+        time.sleep(0.1 * (2**i))
+  else:
+    os.remove(filepath)
 
 
 def file_exists(filepath: Union[str, pathlib.PosixPath]) -> bool:

@@ -14,8 +14,8 @@ export class DefaultService {
     /**
      * Auth Info
      * Returns the user's ACL.
-     *
-     * NOTE: Validation happens server-side as well. This is just used for UI treatment.
+ *
+ * NOTE: Validation happens server-side as well. This is just used for UI treatment.
      * @returns AuthenticationInfo Successful Response
      * @throws ApiError
      */

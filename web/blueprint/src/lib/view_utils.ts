@@ -118,6 +118,9 @@ export function getSearchEmbedding(
   searchPath: Path | undefined,
   embeddings: string[]
 ): string | null {
+  if (datasetSettings != null && datasetSettings.preferred_embedding != null) {
+    return datasetSettings.preferred_embedding;
+  }
   const existingEmbeddings = getComputedEmbeddings(schema, searchPath);
   if (existingEmbeddings != null && existingEmbeddings.length > 0) {
     // Sort embeddings by what have already been precomputed first.
@@ -137,9 +140,6 @@ export function getSearchEmbedding(
           })
         : [];
     return sortedEmbeddings[0];
-  }
-  if (datasetSettings != null && datasetSettings.preferred_embedding != null) {
-    return datasetSettings.preferred_embedding;
   }
   if (appSettings.embedding != null) {
     return appSettings.embedding;

@@ -670,6 +670,11 @@ class DatasetDuckDB(Dataset):
         missing_ok=True
       )
       self.con = duckdb.connect(database=os.path.join(self.dataset_path, DUCKDB_CACHE_FILE))
+    elif os.name == 'nt':
+      # On Windows, even for the :memory: database, we must close the connection to release file
+      # handles.
+      self.con.close()
+      self.con = duckdb.connect(database=':memory:')
 
   def _add_map_keys_to_schema(self, path: PathTuple, field: Field, merged_schema: Schema) -> None:
     """Adds the keys of a map to the schema."""
@@ -1083,6 +1088,7 @@ class DatasetDuckDB(Dataset):
       )
       if overwrite and os.path.exists(parquet_filepath):
         # Delete the parquet file if it exists.
+        self._clear_joint_table_cache()
         delete_file(parquet_filepath)
 
       os.makedirs(os.path.dirname(parquet_filepath), exist_ok=True)
@@ -1353,7 +1359,7 @@ class DatasetDuckDB(Dataset):
     # If the signal manifest already exists, delete it as it will be rewritten after the new signal
     # outputs are run.
     if os.path.exists(signal_manifest_filepath):
-      os.remove(signal_manifest_filepath)
+      delete_file(signal_manifest_filepath)
       # Recreate all the views, otherwise this could be stale and point to a non existent file.
       self._clear_joint_table_cache()
 
@@ -1389,7 +1395,7 @@ class DatasetDuckDB(Dataset):
     # If the signal manifest already exists, delete it as it will be rewritten after the new signal
     # outputs are run.
     if os.path.exists(signal_manifest_filepath):
-      os.remove(signal_manifest_filepath)
+      delete_file(signal_manifest_filepath)
       # Recreate all the views, otherwise this could be stale and point to a non existent file.
       self._clear_joint_table_cache()
 

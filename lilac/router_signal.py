@@ -1,7 +1,7 @@
 """Router for the signal registry."""
 
 import math
-from typing import Annotated, Any, Optional
+from typing import Annotated, Any, Optional, Union
 
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel, SerializeAsAny, field_validator
@@ -59,7 +59,7 @@ class SignalComputeOptions(BaseModel):
 
   signal: SerializeAsAny[Signal]
   # The inputs to compute.
-  inputs: list[str]
+  inputs: list[Union[str, list[int]]]
 
   @field_validator('signal', mode='before')
   @classmethod

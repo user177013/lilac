@@ -12,4 +12,3 @@ export type MapInfo = {
     fn_source: string;
     date_created: string;
 };
-

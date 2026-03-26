@@ -9,4 +9,3 @@
 export type Source = {
     source_name: string;
 };
-

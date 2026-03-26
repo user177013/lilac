@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 from pytest_mock import MockerFixture
 
-from ..embeddings.jina import JinaV2Small
+from ..embeddings.nomic_embed import NomicEmbedV2MoE
 from ..formats import ShareGPT
 from ..schema import ClusterInfo, Item, chunk_embedding, field, schema
 from ..signal import TextSignal, clear_signal_registry, register_signal
@@ -44,7 +44,7 @@ def setup_teardown() -> Iterable[None]:
   clear_signal_registry()
   clear_source_registry()
   register_source(TestSource)
-  register_signal(JinaV2Small)
+  register_signal(NomicEmbedV2MoE)
   register_signal(TestSignal)
 
   # Unit test runs.
@@ -55,7 +55,7 @@ def setup_teardown() -> Iterable[None]:
   clear_source_registry()
 
 
-def _mock_jina(mocker: MockerFixture) -> None:
+def _mock_embedding(mocker: MockerFixture) -> None:
   def compute(docs: list[str]) -> list[Item]:
     result = []
     for doc in docs:
@@ -67,8 +67,8 @@ def _mock_jina(mocker: MockerFixture) -> None:
         result.append([chunk_embedding(0, len(doc), np.array([100, 0, -100]))])
     return result
 
-  mocker.patch.object(JinaV2Small, 'compute', side_effect=compute)
-  mocker.patch.object(JinaV2Small, 'setup', return_value=None)
+  mocker.patch.object(NomicEmbedV2MoE, 'compute', side_effect=compute)
+  mocker.patch.object(NomicEmbedV2MoE, 'setup', return_value=None)
 
 
 def test_simple_clusters(make_test_data: TestDataMaker, mocker: MockerFixture) -> None:
@@ -88,7 +88,7 @@ def test_simple_clusters(make_test_data: TestDataMaker, mocker: MockerFixture) -
     return 'other'
 
   mocker.patch.object(clustering, 'MIN_CLUSTER_SIZE_CATEGORY', 2)
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
 
   dataset.cluster(
     'text', min_cluster_size=2, topic_fn=topic_fn, category_fn=lambda _: 'MockCategory'
@@ -248,7 +248,7 @@ def test_nested_clusters(make_test_data: TestDataMaker, mocker: MockerFixture) -
       return 'simplification'
     return 'other'
 
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
 
   dataset.cluster(
     'texts.*.text', min_cluster_size=2, topic_fn=topic_fn, category_fn=lambda _: 'MockCategory'
@@ -311,7 +311,7 @@ def test_path_ending_with_repeated(make_test_data: TestDataMaker, mocker: Mocker
     return 'other'
 
   mocker.patch.object(clustering, 'MIN_CLUSTER_SIZE_CATEGORY', 2)
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
   dataset.cluster(
     'texts.*', min_cluster_size=2, topic_fn=topic_fn, category_fn=lambda _: 'MockCategory'
   )
@@ -379,7 +379,7 @@ def test_clusters_with_fn(make_test_data: TestDataMaker, mocker: MockerFixture) 
   ):
     dataset.cluster(lambda row: '\n'.join(row['texts']), min_cluster_size=2, topic_fn=topic_fn)
 
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
   dataset.cluster(
     lambda row: '\n'.join(row['texts']),
     output_path='cluster',
@@ -455,7 +455,7 @@ def test_clusters_with_fn_output_is_under_a_dict(
       return 'simplification'
     return 'other'
 
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
   dataset.cluster(
     lambda row: '\n'.join(row['texts']),
     output_path=('info', 'cluster'),
@@ -564,7 +564,7 @@ def test_clusters_sharegpt(make_test_data: TestDataMaker, mocker: MockerFixture)
     return 'other'
 
   mocker.patch.object(clustering, 'MIN_CLUSTER_SIZE_CATEGORY', 2)
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
   dataset.cluster(
     ShareGPT.human,
     output_path='cluster',
@@ -663,7 +663,7 @@ def test_clusters_on_enriched_text(make_test_data: TestDataMaker, mocker: Mocker
   signal = TestSignal()
   dataset.compute_signal(signal, 'text')
   mocker.patch.object(clustering, 'MIN_CLUSTER_SIZE_CATEGORY', 2)
-  _mock_jina(mocker)
+  _mock_embedding(mocker)
 
   dataset.cluster(
     'text', min_cluster_size=2, topic_fn=topic_fn, category_fn=lambda _: 'MockCategory'

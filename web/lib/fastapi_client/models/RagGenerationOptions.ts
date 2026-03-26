@@ -13,4 +13,3 @@ export type RagGenerationOptions = {
     retrieval_results: Array<RagRetrievalResultItem>;
     prompt_template: string;
 };
-

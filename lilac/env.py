@@ -115,6 +115,11 @@ class LilacEnvironment(BaseModel):
     description='The S3 endpoint URL for S3-like operations, including GCS and Azure.'
   )
 
+  # Llama.cpp settings.
+  LILAC_LLAMACPP_MODELS_DIR: str = PydanticField(
+    description='The directory where llama.cpp GGUF models are stored.'
+  )
+
 
 def _init_env() -> None:
   in_test = os.environ.get('LILAC_TEST', None)
@@ -162,7 +167,15 @@ def get_project_dir() -> str:
     project_dir = env('LILAC_DATA_PATH', DEFAULT_PROJECT_DIR)
   if not project_dir:
     raise ValueError('`LILAC_PROJECT_DIR` environment variable must be set. ')
-  return project_dir
+  return os.path.abspath(project_dir)
+
+
+def get_llamacpp_models_dir() -> str:
+  """Return the directory where llama.cpp GGUF models are stored."""
+  models_dir = env('LILAC_LLAMACPP_MODELS_DIR', None)
+  if not models_dir:
+    models_dir = os.path.join(get_project_dir(), 'models', 'gguf')
+  return os.path.abspath(os.path.expanduser(models_dir))
 
 
 def set_project_dir(project_dir: Union[str, pathlib.Path]) -> None:

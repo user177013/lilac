@@ -11,4 +11,3 @@ export type BinaryFilter = {
     op: 'equals' | 'not_equal' | 'greater' | 'greater_equal' | 'less' | 'less_equal';
     value: (boolean | number | string | Blob);
 };
-

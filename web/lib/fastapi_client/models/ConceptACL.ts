@@ -10,4 +10,3 @@ export type ConceptACL = {
     read: boolean;
     write: boolean;
 };
-

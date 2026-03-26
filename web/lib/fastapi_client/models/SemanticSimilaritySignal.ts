@@ -21,4 +21,3 @@ export type SemanticSimilaritySignal = {
      */
     query_type?: 'question' | 'document';
 };
-

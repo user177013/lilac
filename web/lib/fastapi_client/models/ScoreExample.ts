@@ -10,4 +10,3 @@ export type ScoreExample = {
     text?: (string | null);
     img?: (Blob | null);
 };
-

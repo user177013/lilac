@@ -12,4 +12,3 @@ export type MetadataSearch = {
     value?: (boolean | number | string | Blob | Array<string> | null);
     type: 'metadata';
 };
-
